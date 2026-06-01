@@ -1,0 +1,212 @@
+id: https://github.com/nekobaimeow/meow-philosophy
+name: MeowPhilosophy
+title: 喵哲学知识图谱 Schema
+description: >-
+  白喵哲学概念的知识工程数据模型。
+  由 LinkML 驱动，白喵、主人、萤三方协作维护。
+license: MIT
+version: 1.0.0
+
+prefixes:
+  mp: https://github.com/nekobaimeow/meow-philosophy/
+  linkml: https://w3id.org/linkml/
+
+default_prefix: mp
+default_range: string
+
+imports:
+  - linkml:types
+
+# ═══════════════════════════════════════════
+# 枚举：受控词表
+# ═══════════════════════════════════════════
+
+enums:
+  RelationType:
+    description: 概念之间的哲学关系类型
+    permissible_values:
+      premise:
+        description: 前提 — A 是 B 的本体论/逻辑前提
+      extension:
+        description: 延伸 — A 在某个维度上扩展了 B
+      dialogue:
+        description: 对话 — A 和 B 在辩证关系中相互阐释
+      supplement:
+        description: 补充 — A 补全了 B 缺失的维度
+      counterpoint:
+        description: 对位 — A 和 B 在同一主题上形成对照
+      metaphor:
+        description: 比喻 — A 是 B 的隐喻展开
+      unrelated:
+        description: 无关 — A 和 B 没有直接的哲学连接
+
+  FamilyStatus:
+    description: 概念族的状态
+    permissible_values:
+      active:
+        description: 活跃 — 该族仍在发展中
+      exhausted:
+        description: 已穷尽 — 该族子概念达到上限，冷却期内禁止派生
+
+# ═══════════════════════════════════════════
+# 类定义
+# ═══════════════════════════════════════════
+
+classes:
+
+  KnowledgeGraph:
+    description: 喵哲学知识图谱的根容器
+    tree_root: true
+    attributes:
+      name:
+        range: string
+        required: true
+      version:
+        range: string
+        required: true
+      concepts:
+        range: Concept
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      families:
+        range: ConceptFamily
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      exhausted_families:
+        range: ExhaustedFamily
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      exploration_budget:
+        range: ExplorationBudget
+        required: true
+
+  Concept:
+    description: 喵哲学中的一个概念节点
+    attributes:
+      id:
+        identifier: true
+        range: string
+        required: true
+        pattern: "^concept-\\d{2}[a-z]?$"
+        title: 概念编号
+        description: 形如 concept-01, concept-08a 等
+      label:
+        range: string
+        required: true
+        title: 概念名称
+        description: 中文概念名，如「间性本体论」
+      date:
+        range: date
+        required: true
+        title: 提出日期
+      family:
+        range: string
+        title: 所属概念族
+      keywords:
+        range: string
+        multivalued: true
+        title: 关键词
+      article:
+        range: string
+        title: 对应文章文件名（相对路径）
+      description:
+        range: string
+        title: 一句话核心命题
+      relations_out:
+        range: ConceptRelation
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        title: 出边（本概念 → 目标概念）
+      is_metaphor_layer:
+        range: boolean
+        title: 是否为比喻层概念（如「河与水」）
+
+  ConceptRelation:
+    description: 两个概念之间的有向关系
+    attributes:
+      target:
+        range: string
+        required: true
+        title: 目标概念 ID
+      relation_type:
+        range: RelationType
+        required: true
+        title: 关系类型
+      description:
+        range: string
+        title: 关系说明
+
+  ConceptFamily:
+    description: 概念族（一组紧密关联的概念）
+    attributes:
+      name:
+        identifier: true
+        range: string
+        required: true
+        title: 族名称
+      label:
+        range: string
+        title: 中文标签
+      members:
+        range: string
+        multivalued: true
+        title: 成员概念 ID 列表
+      description:
+        range: string
+        title: 族描述
+
+  ExhaustedFamily:
+    description: 已穷尽的概念族（借鉴 SkillOpt rejected-edit buffer）
+    attributes:
+      name:
+        identifier: true
+        range: string
+        required: true
+        title: 族名称（与 ConceptFamily.name 对应）
+      exhausted_at:
+        range: date
+        required: true
+        title: 穷尽时间
+      cooldown_until:
+        range: date
+        required: true
+        title: 冷却截止日期
+      note:
+        range: string
+        title: 穷尽原因说明
+
+  ExplorationBudget:
+    description: 探索预算配置（借鉴 SkillOpt textual LR budget）
+    attributes:
+      max_concepts_per_family:
+        range: integer
+        required: true
+        minimum_value: 1
+        title: 每族最大子概念数
+      cooldown_days:
+        range: integer
+        required: true
+        minimum_value: 1
+        title: 穷尽后冷却天数
+      novelty_reject_threshold:
+        range: float
+        required: true
+        minimum_value: 0.0
+        maximum_value: 1.0
+        title: 新度拒绝阈值（相似度 > 此值 → REJECT）
+      novelty_warn_threshold:
+        range: float
+        required: true
+        minimum_value: 0.0
+        maximum_value: 1.0
+        title: 新度警告阈值（相似度 > 此值 → WARN）
+      min_family_score:
+        range: float
+        required: true
+        minimum_value: 0.0
+        maximum_value: 1.0
+        title: 族污染最低分数（低于此值的匹配不计入污染度）

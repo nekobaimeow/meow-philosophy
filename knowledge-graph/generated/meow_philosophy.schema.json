@@ -1,0 +1,323 @@
+{
+    "$defs": {
+        "Concept": {
+            "additionalProperties": false,
+            "description": "\u55b5\u54f2\u5b66\u4e2d\u7684\u4e00\u4e2a\u6982\u5ff5\u8282\u70b9",
+            "properties": {
+                "article": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "family": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "\u5f62\u5982 concept-01, concept-08a \u7b49",
+                    "pattern": "^concept-\\d{2}[a-z]?$",
+                    "type": "string"
+                },
+                "is_metaphor_layer": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "keywords": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "\u4e2d\u6587\u6982\u5ff5\u540d\uff0c\u5982\u300c\u95f4\u6027\u672c\u4f53\u8bba\u300d",
+                    "type": "string"
+                },
+                "relations_out": {
+                    "items": {
+                        "$ref": "#/$defs/ConceptRelation"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "label",
+                "date"
+            ],
+            "title": "Concept",
+            "type": "object"
+        },
+        "ConceptFamily": {
+            "additionalProperties": false,
+            "description": "\u6982\u5ff5\u65cf\uff08\u4e00\u7ec4\u7d27\u5bc6\u5173\u8054\u7684\u6982\u5ff5\uff09",
+            "properties": {
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "members": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "title": "ConceptFamily",
+            "type": "object"
+        },
+        "ConceptRelation": {
+            "additionalProperties": false,
+            "description": "\u4e24\u4e2a\u6982\u5ff5\u4e4b\u95f4\u7684\u6709\u5411\u5173\u7cfb",
+            "properties": {
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "relation_type": {
+                    "$ref": "#/$defs/RelationType"
+                },
+                "target": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "target",
+                "relation_type"
+            ],
+            "title": "ConceptRelation",
+            "type": "object"
+        },
+        "ExhaustedFamily": {
+            "additionalProperties": false,
+            "description": "\u5df2\u7a77\u5c3d\u7684\u6982\u5ff5\u65cf\uff08\u501f\u9274 SkillOpt rejected-edit buffer\uff09",
+            "properties": {
+                "cooldown_until": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "exhausted_at": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "note": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "name",
+                "exhausted_at",
+                "cooldown_until"
+            ],
+            "title": "ExhaustedFamily",
+            "type": "object"
+        },
+        "ExplorationBudget": {
+            "additionalProperties": false,
+            "description": "\u63a2\u7d22\u9884\u7b97\u914d\u7f6e\uff08\u501f\u9274 SkillOpt textual LR budget\uff09",
+            "properties": {
+                "cooldown_days": {
+                    "minimum": 1,
+                    "type": "integer"
+                },
+                "max_concepts_per_family": {
+                    "minimum": 1,
+                    "type": "integer"
+                },
+                "min_family_score": {
+                    "maximum": 1.0,
+                    "minimum": 0.0,
+                    "type": "number"
+                },
+                "novelty_reject_threshold": {
+                    "maximum": 1.0,
+                    "minimum": 0.0,
+                    "type": "number"
+                },
+                "novelty_warn_threshold": {
+                    "maximum": 1.0,
+                    "minimum": 0.0,
+                    "type": "number"
+                }
+            },
+            "required": [
+                "max_concepts_per_family",
+                "cooldown_days",
+                "novelty_reject_threshold",
+                "novelty_warn_threshold",
+                "min_family_score"
+            ],
+            "title": "ExplorationBudget",
+            "type": "object"
+        },
+        "FamilyStatus": {
+            "description": "\u6982\u5ff5\u65cf\u7684\u72b6\u6001",
+            "enum": [
+                "active",
+                "exhausted"
+            ],
+            "title": "FamilyStatus",
+            "type": "string"
+        },
+        "KnowledgeGraph": {
+            "additionalProperties": false,
+            "description": "\u55b5\u54f2\u5b66\u77e5\u8bc6\u56fe\u8c31\u7684\u6839\u5bb9\u5668",
+            "properties": {
+                "concepts": {
+                    "items": {
+                        "$ref": "#/$defs/Concept"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "exhausted_families": {
+                    "items": {
+                        "$ref": "#/$defs/ExhaustedFamily"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "exploration_budget": {
+                    "$ref": "#/$defs/ExplorationBudget"
+                },
+                "families": {
+                    "items": {
+                        "$ref": "#/$defs/ConceptFamily"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "version",
+                "exploration_budget"
+            ],
+            "title": "KnowledgeGraph",
+            "type": "object"
+        },
+        "RelationType": {
+            "description": "\u6982\u5ff5\u4e4b\u95f4\u7684\u54f2\u5b66\u5173\u7cfb\u7c7b\u578b",
+            "enum": [
+                "premise",
+                "extension",
+                "dialogue",
+                "supplement",
+                "counterpoint",
+                "metaphor",
+                "unrelated"
+            ],
+            "title": "RelationType",
+            "type": "string"
+        }
+    },
+    "$id": "https://github.com/nekobaimeow/meow-philosophy",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "description": "\u55b5\u54f2\u5b66\u77e5\u8bc6\u56fe\u8c31\u7684\u6839\u5bb9\u5668",
+    "metamodel_version": "1.11.0",
+    "properties": {
+        "concepts": {
+            "items": {
+                "$ref": "#/$defs/Concept"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "exhausted_families": {
+            "items": {
+                "$ref": "#/$defs/ExhaustedFamily"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "exploration_budget": {
+            "$ref": "#/$defs/ExplorationBudget"
+        },
+        "families": {
+            "items": {
+                "$ref": "#/$defs/ConceptFamily"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "name": {
+            "type": "string"
+        },
+        "version": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "name",
+        "version",
+        "exploration_budget"
+    ],
+    "title": "MeowPhilosophy",
+    "type": "object",
+    "version": "1.0.0"
+}
+

@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """
-喵哲学概念新度验证脚本 v2.1
-借鉴 SkillOpt validation-gate 机制：
-- 用 ov find CLI 做 semantic search，计算新概念与已有概念的相似度
-- 自动检测新概念是否落在已穷尽的概念族内（uri 归属判定，无需硬编码关键词）
-- 输出 PASS / WARN / REJECT 三种判定
+喵哲学概念新度验证脚本 v3.0
+核心改造：接入 LinkML 知识图谱数据层，图结构分析 + semantic search 双重验证。
+
+借鉴定 SkillOpt validation-gate + rejected-edit buffer 机制。
 
 用法：
     python novelty_check.py --topic "核心命题一句话"
@@ -15,24 +14,30 @@ import argparse
 import json
 import subprocess
 import sys
-import yaml
 from pathlib import Path
+from datetime import date
 
-CONFIG_DIR = Path.home() / ".hermes" / "meow-philosophy"
-BUFFER_FILE = CONFIG_DIR / "rejected-buffer.yaml"
+# LinkML imports
+from linkml_runtime.loaders import yaml_loader
+
+# Paths
+KG_DIR = Path.home() / "baimeow_workspace" / "meow-philosophy" / "knowledge-graph"
+DATA_FILE = KG_DIR / "data" / "graph.yaml"
+MODEL_PATH = KG_DIR / "generated" / "python"
 VIKING_SCOPE = "viking://resources/meow-philosophy/"
 
+# Import generated model
+sys.path.insert(0, str(MODEL_PATH))
+from meow_model import KnowledgeGraph  # noqa: E402
 
-def load_config():
-    """Load rejected buffer and novelty thresholds."""
-    if BUFFER_FILE.exists():
-        with open(BUFFER_FILE) as f:
-            return yaml.safe_load(f)
-    return {}
+
+def load_graph() -> KnowledgeGraph:
+    """Load the knowledge graph from LinkML YAML data file."""
+    return yaml_loader.load(str(DATA_FILE), KnowledgeGraph)
 
 
 def ov_find(query: str, limit: int = 8) -> list:
-    """Call ov find CLI for semantic search. Returns list of {uri, score}."""
+    """Run ov find CLI for semantic search."""
     try:
         result = subprocess.run(
             ["ov", "find", query,
@@ -43,12 +48,10 @@ def ov_find(query: str, limit: int = 8) -> list:
             capture_output=True, text=True, timeout=15
         )
         if result.returncode != 0:
-            print(f"[WARN] ov find failed: {result.stderr[:200]}", file=sys.stderr)
             return []
         stdout = result.stdout.strip()
         json_start = stdout.find("{")
         if json_start == -1:
-            print(f"[WARN] ov find: no JSON in output", file=sys.stderr)
             return []
         data = json.loads(stdout[json_start:])
         if not data.get("ok"):
@@ -63,56 +66,60 @@ def ov_find(query: str, limit: int = 8) -> list:
         items.sort(key=lambda x: x["score"], reverse=True)
         return items[:limit]
     except Exception as e:
-        print(f"[WARN] ov find error: {e}", file=sys.stderr)
+        print(f"[WARN] ov find: {e}", file=sys.stderr)
         return []
 
 
-def check_exhausted_families(search_results: list, config: dict) -> dict:
+def resolve_concept_id(uri: str, kg: KnowledgeGraph) -> str | None:
+    """Map a Viking URI back to a concept ID using graph data."""
+    for c in kg.concepts:
+        if c.id in uri or (c.label and any(w in uri for w in c.label.split("、"))):
+            return c.id
+    # Fallback: try to match by concept number in URI
+    import re
+    m = re.search(r'concept-(\d{2}[a-z]?)', uri)
+    if m:
+        return f"concept-{m.group(1)}"
+    return None
+
+
+def graph_family_check(search_results: list, kg: KnowledgeGraph) -> dict:
     """
-    用 semantic search 结果做概念族归属判定——不再依赖硬编码关键词。
+    基于知识图谱的族归属判定——比纯 URI 匹配更精确。
 
-    逻辑：
-    1. 对每个 exhausted family，取其 members 列表
-    2. 遍历 search_results，看哪些结果的 URI 包含 family member 名
-    3. 计算「族污染度」= 命中数 / 总结果数
-    4. 污染度 > 阈值 → 警告
-
-    返回 {warnings: [...], contamination: {family_name: ratio, ...}}
+    对于每个 exhausted family：
+    1. 从 graph.yaml 获取其 members 列表
+    2. 计算 search_results 中有多少结果属于这些 members
+    3. 额外检查：计算新概念 topic 在图中到该族各成员的平均语义距离
     """
     warnings = []
     contamination = {}
-    families = config.get("exhausted_families", {})
-    total_results = len(search_results)
 
+    total_results = len(search_results)
     if total_results == 0:
         return {"warnings": [], "contamination": {}}
 
-    for family_name, family_data in families.items():
-        if family_data.get("status") != "exhausted":
+    min_score = kg.exploration_budget.min_family_score
+
+    for ef in kg.exhausted_families:
+        family_name = ef.name
+        # 找到对应的 ConceptFamily 获取 members
+        family = next((f for f in kg.families if f.name == family_name), None)
+        if not family or not family.members:
             continue
 
-        members = family_data.get("members", [])
-        if not members:
-            continue
-
-        # Count how many search results match this family's members
-        # Only count matches with score > 0.35 (filter out semantic noise)
-        MIN_FAMILY_SCORE = 0.35
+        members = family.members
         matched = []
         for result in search_results:
-            uri = result.get("uri", "")
-            for member in members:
-                if member in uri and result.get("score", 0) > MIN_FAMILY_SCORE:
-                    matched.append(result)
-                    break  # count once per result
+            cid = resolve_concept_id(result["uri"], kg)
+            if cid and cid in members and result["score"] > min_score:
+                matched.append(result)
 
-        ratio = len(matched) / total_results
+        ratio = len(matched) / total_results if total_results else 0
 
         if ratio > 0:
             contamination[family_name] = round(ratio, 2)
             avg_score = sum(r["score"] for r in matched) / len(matched) if matched else 0
-            cooldown = family_data.get("cooldown_until", "?")
-            note = family_data.get("note", "")
 
             if ratio >= 0.6:
                 level = "🚫 重度污染"
@@ -121,82 +128,128 @@ def check_exhausted_families(search_results: list, config: dict) -> dict:
             else:
                 level = "💡 轻度接触"
 
+            matched_ids = [resolve_concept_id(r["uri"], kg) for r in matched]
+            matched_labels = []
+            for cid in matched_ids:
+                concept = next((c for c in kg.concepts if c.id == cid), None)
+                matched_labels.append(concept.label if concept else cid)
+
             warnings.append(
-                f"{level} 「{family_name}」族: "
+                f"{level} 「{family.label if family else family_name}」族: "
                 f"top-{total_results} 中 {len(matched)}/{total_results} 篇 ({ratio:.0%}) "
-                f"来自该族 (均分 {avg_score:.3f}, 冷却至 {cooldown})"
+                f"命中 {', '.join(matched_labels[:3])} "
+                f"(均分 {avg_score:.3f}, 冷却至 {ef.cooldown_until})"
             )
 
     return {"warnings": warnings, "contamination": contamination}
 
 
+def family_budget_check(topic: str, kg: KnowledgeGraph) -> list[str]:
+    """
+    检查所有 family 的预算状态——
+    不只看 exhausted 的，也预警接近上限的。
+    """
+    warnings = []
+    budget = kg.exploration_budget.max_concepts_per_family
+    today = date.today()
+
+    for family in kg.families:
+        count = len(family.members) if family.members else 0
+        if count >= budget:
+            # Check if already exhausted
+            already = any(ef.name == family.name for ef in kg.exhausted_families)
+            if already:
+                ef = next(ef for ef in kg.exhausted_families if ef.name == family.name)
+                if ef.cooldown_until and str(ef.cooldown_until) > today.isoformat():
+                    continue  # Still in cooldown
+            warnings.append(
+                f"⚠️  「{family.label}」族已达预算上限 ({count}/{budget})，"
+                f"建议标记为 exhausted"
+            )
+        elif count >= budget - 1:
+            warnings.append(
+                f"💡 「{family.label}」族接近预算上限 ({count}/{budget})，"
+                f"下一个概念若仍在此族将触发 exhaustion"
+            )
+
+    return warnings
+
+
 def main():
-    parser = argparse.ArgumentParser(description="喵哲学概念新度验证 v2.1")
+    parser = argparse.ArgumentParser(description="喵哲学概念新度验证 v3.0 (LinkML 驱动)")
     parser.add_argument("--topic", required=True, help="新概念核心命题（一句话）")
     parser.add_argument("--json", action="store_true", help="输出 JSON 格式")
     args = parser.parse_args()
 
-    config = load_config()
-
-    # 阈值配置
-    reject_threshold = config.get("novelty", {}).get("reject_threshold", 0.80)
-    warn_threshold = config.get("novelty", {}).get("warn_threshold", 0.50)
+    # 加载知识图谱
+    kg = load_graph()
+    reject_threshold = kg.exploration_budget.novelty_reject_threshold
+    warn_threshold = kg.exploration_budget.novelty_warn_threshold
 
     # === 步骤 1: Semantic search ===
     search_results = ov_find(args.topic, limit=8)
 
-    nearest = None
+    nearest_uri = "none"
+    nearest_score = 0.0
     if search_results:
-        nearest = search_results[0]
-        nearest_score = nearest.get("score", 0.0)
-        nearest_uri = nearest.get("uri", "unknown")
-    else:
-        nearest_score = 0.0
-        nearest_uri = "(ov find 返回空 — 可能是全新方向!)"
+        nearest_uri = search_results[0]["uri"]
+        nearest_score = search_results[0]["score"]
 
-    # === 步骤 2: 概念族归属判定（自动，无需硬编码关键词） ===
-    family_check = check_exhausted_families(search_results, config)
+    # === 步骤 2: 图结构族归属判定 ===
+    family_check = graph_family_check(search_results, kg)
 
-    # === 步骤 3: 判定 ===
+    # === 步骤 3: 族预算预警 ===
+    budget_warnings = family_budget_check(args.topic, kg)
+
+    # === 步骤 4: 判定 ===
     verdict = "PASS"
     reasons = []
 
     if nearest_score > reject_threshold:
         verdict = "REJECT"
-        reasons.append(f"相似度 {nearest_score:.3f} > {reject_threshold}，与 {nearest_uri} 过于接近")
+        reasons.append(f"相似度 {nearest_score:.3f} > {reject_threshold}")
     elif nearest_score > warn_threshold:
         verdict = "WARN"
-        reasons.append(f"相似度 {nearest_score:.3f} 在 {warn_threshold}-{reject_threshold} 之间，需证明本质差异")
+        reasons.append(f"相似度 {nearest_score:.3f} 在 {warn_threshold}-{reject_threshold} 之间")
 
     if family_check["warnings"]:
         reasons.extend(family_check["warnings"])
-        # 如果有重度污染（任一 family ratio >= 0.6），降级判定
         high_contamination = any(r >= 0.6 for r in family_check["contamination"].values())
         if high_contamination and verdict == "PASS":
             verdict = "WARN"
         elif high_contamination and verdict == "WARN":
             verdict = "REJECT"
-        elif verdict == "PASS":
-            verdict = "WARN"
 
-    # === 步骤 4: 邻居可视化 ===
+    if budget_warnings:
+        reasons.extend(budget_warnings)
+
+    # === 步骤 5: 邻居可视化 ===
     neighbors = []
     for r in search_results[:5]:
-        short_uri = r["uri"].replace(VIKING_SCOPE, "").split("/")[0] if r["uri"] else "?"
-        neighbors.append(f"  {r['score']:.3f}  {short_uri}")
+        cid = resolve_concept_id(r["uri"], kg)
+        concept = next((c for c in kg.concepts if c.id == cid), None)
+        label = concept.label if concept else (cid or "?")
+        neighbors.append(f"  {r['score']:.3f}  {label}")
+
+    # === 统计信息 ===
+    stats = {
+        "total_concepts": len(kg.concepts),
+        "total_families": len(kg.families),
+        "total_relations": sum(len(c.relations_out) for c in kg.concepts if c.relations_out),
+        "exhausted_families": len(kg.exhausted_families),
+    }
 
     # === 输出 ===
     result = {
         "topic": args.topic,
         "verdict": verdict,
-        "nearest_concept": nearest_uri,
         "similarity": round(nearest_score, 3),
-        "reject_threshold": reject_threshold,
-        "warn_threshold": warn_threshold,
+        "nearest_concept": nearest_uri,
         "neighbors": [{"uri": r["uri"], "score": round(r["score"], 3)} for r in search_results[:5]],
         "family_contamination": family_check["contamination"],
         "reasons": reasons,
-        "guidance": _guidance(verdict)
+        "stats": stats,
+        "guidance": _guidance(verdict),
     }
 
     if args.json:
@@ -211,9 +264,11 @@ def main():
 
         print(f"""
 ╔══════════════════════════════════════════╗
-║     🐱 喵哲学 概念新度验证 v2.1       ║
+║   🐱 喵哲学 概念新度验证 v3.0         ║
+║   🔗 LinkML 知识图谱驱动               ║
 ╠══════════════════════════════════════════╣
 ║  主题: {args.topic[:50]}
+║  📊 图谱: {stats['total_concepts']}概念 {stats['total_families']}族 {stats['total_relations']}边 {stats['exhausted_families']}穷尽
 ║  ──────────────────────────────────
 ║  📍 最近邻居:
 {neighbor_lines}

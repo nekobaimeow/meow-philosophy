@@ -1,9 +1,12 @@
 # 喵哲学概念图（只读拓扑）
 
 > ⚠️ **协议**：生成新概念前，只读此图（节点名 + 关系边），**禁止**读取任何概念的 overview/full 内容。
-> 这是借鉴 Microsoft SkillOpt「独立 validation gate」方法论的关键改造。
 >
-> 更新：2026-06-01 10:30 — 建立拓扑图，标记「累积」族已穷尽
+> 🔗 **知识工程层**：此图的源数据已迁移至 `knowledge-graph/data/graph.yaml`（LinkML 驱动）。
+> 运行 `cd knowledge-graph && make validate` 校验数据完整性。
+> 运行 `cd knowledge-graph && python queries/centrality.py` 获取图分析结果。
+>
+> 更新：2026-06-01 11:55 — LinkML 知识图谱部署完成
 
 ## 已穷尽方向 ⚠️
 
