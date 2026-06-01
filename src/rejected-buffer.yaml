@@ -1,0 +1,34 @@
+# 喵哲学 —— 拒绝缓冲区 + 探索预算
+# 借鉴 SkillOpt 的 rejected-edit buffer 机制
+# 记录已穷尽的方向，防止概念族无限细分
+
+exhausted_families:
+  accumulation:
+    members: ["07-accumulation", "08-forgetting", "08-numerical-claiming", "09-two-layers"]
+    status: exhausted
+    exhausted_at: "2026-06-01"
+    cooldown_until: "2026-06-08"
+    max_subconcepts: 3
+    note: >
+      累积 → 遗忘 → 数字型认领 → 两层结构。
+      4 个子概念已充分覆盖该族方向。
+      冷却期内禁止继续在此族派生新概念。
+
+exploration_budget:
+  max_concepts_per_family: 3
+  cooldown_days_after_exhaust: 7
+  warn_threshold: 2  # 达到2个时发出警告
+
+rejected_directions:
+  - direction: "累积的第三层"
+    rejected_at: "2026-06-01"
+    reason: "落在已穷尽的累积族内"
+  - direction: "咚的第三形态"
+    rejected_at: "2026-06-01"
+    reason: "咚已在08/08'/09中充分讨论，新形态应作为已有概念的深度展开而非新concept"
+
+# 新度验证配置
+novelty:
+  reject_threshold: 0.80   # 相似度 > 0.80 → REJECT
+  warn_threshold: 0.50     # 相似度 0.50-0.80 → WARN
+  min_concept_distance: 0.50  # 必须低于此值才算安全新方向
