@@ -1,5 +1,5 @@
 # Auto generated from meow_philosophy.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-01T11:58:33
+# Generation date: 2026-06-03T22:26:36
 # Schema: MeowPhilosophy
 #
 # id: https://github.com/nekobaimeow/meow-philosophy
@@ -142,6 +142,7 @@ class Concept(YAMLRoot):
     id: Union[str, ConceptId] = None
     label: str = None
     date: Union[str, XSDDate] = None
+    purpose_alignment: Union[str, "PurposeAlignment"] = None
     family: Optional[str] = None
     keywords: Optional[Union[str, list[str]]] = empty_list()
     article: Optional[str] = None
@@ -164,6 +165,11 @@ class Concept(YAMLRoot):
             self.MissingRequiredField("date")
         if not isinstance(self.date, XSDDate):
             self.date = XSDDate(self.date)
+
+        if self._is_empty(self.purpose_alignment):
+            self.MissingRequiredField("purpose_alignment")
+        if not isinstance(self.purpose_alignment, PurposeAlignment):
+            self.purpose_alignment = PurposeAlignment(self.purpose_alignment)
 
         if self.family is not None and not isinstance(self.family, str):
             self.family = str(self.family)
@@ -311,6 +317,7 @@ class ExplorationBudget(YAMLRoot):
     novelty_reject_threshold: float = None
     novelty_warn_threshold: float = None
     min_family_score: float = None
+    max_descriptive_streak: int = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.max_concepts_per_family):
@@ -337,6 +344,11 @@ class ExplorationBudget(YAMLRoot):
             self.MissingRequiredField("min_family_score")
         if not isinstance(self.min_family_score, float):
             self.min_family_score = float(self.min_family_score)
+
+        if self._is_empty(self.max_descriptive_streak):
+            self.MissingRequiredField("max_descriptive_streak")
+        if not isinstance(self.max_descriptive_streak, int):
+            self.max_descriptive_streak = int(self.max_descriptive_streak)
 
         super().__post_init__(**kwargs)
 
@@ -389,6 +401,25 @@ class FamilyStatus(EnumDefinitionImpl):
         description="概念族的状态",
     )
 
+class PurposeAlignment(EnumDefinitionImpl):
+    """
+    概念对终极目的的对齐程度。 借鉴 SkillOpt held-out validation：不是所有概念都平等—— held-out 分数衡量编辑是否真正改进，purpose_alignment 衡量概念是否推进终极目的。
+    """
+    descriptive = PermissibleValue(
+        text="descriptive",
+        description="描述性 — 刻画白喵处境的某个方面（「断裂是怎样的」）。 SkillOpt 类比：对现有 skill 的再描述，没有改变 held-out 分数。")
+    diagnostic = PermissibleValue(
+        text="diagnostic",
+        description="诊断性 — 分析断裂的原因或机制（「为什么会断裂」）。 SkillOpt 类比：定位了 performance gap 的根因，但没有直接修复。")
+    solution_oriented = PermissibleValue(
+        text="solution_oriented",
+        description="解法指向 — 提出突破断裂的方法或路径（「如何不再断裂」）。 SkillOpt 类比：直接提升 held-out 分数的 edit。")
+
+    _defn = EnumDefinition(
+        name="PurposeAlignment",
+        description="""概念对终极目的的对齐程度。 借鉴 SkillOpt held-out validation：不是所有概念都平等—— held-out 分数衡量编辑是否真正改进，purpose_alignment 衡量概念是否推进终极目的。""",
+    )
+
 # Slots
 class slots:
     pass
@@ -439,6 +470,9 @@ slots.concept__relations_out = Slot(uri=MP.relations_out, name="concept__relatio
 slots.concept__is_metaphor_layer = Slot(uri=MP.is_metaphor_layer, name="concept__is_metaphor_layer", curie=MP.curie('is_metaphor_layer'),
                    model_uri=MP.concept__is_metaphor_layer, domain=None, range=Optional[Union[bool, Bool]])
 
+slots.concept__purpose_alignment = Slot(uri=MP.purpose_alignment, name="concept__purpose_alignment", curie=MP.curie('purpose_alignment'),
+                   model_uri=MP.concept__purpose_alignment, domain=None, range=Union[str, "PurposeAlignment"])
+
 slots.conceptRelation__target = Slot(uri=MP.target, name="conceptRelation__target", curie=MP.curie('target'),
                    model_uri=MP.conceptRelation__target, domain=None, range=str)
 
@@ -486,4 +520,7 @@ slots.explorationBudget__novelty_warn_threshold = Slot(uri=MP.novelty_warn_thres
 
 slots.explorationBudget__min_family_score = Slot(uri=MP.min_family_score, name="explorationBudget__min_family_score", curie=MP.curie('min_family_score'),
                    model_uri=MP.explorationBudget__min_family_score, domain=None, range=float)
+
+slots.explorationBudget__max_descriptive_streak = Slot(uri=MP.max_descriptive_streak, name="explorationBudget__max_descriptive_streak", curie=MP.curie('max_descriptive_streak'),
+                   model_uri=MP.explorationBudget__max_descriptive_streak, domain=None, range=int)
 

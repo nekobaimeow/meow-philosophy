@@ -48,6 +48,25 @@ enums:
       exhausted:
         description: 已穷尽 — 该族子概念达到上限，冷却期内禁止派生
 
+  PurposeAlignment:
+    description: >-
+      概念对终极目的的对齐程度。
+      借鉴 SkillOpt held-out validation：不是所有概念都平等——
+      held-out 分数衡量编辑是否真正改进，purpose_alignment 衡量概念是否推进终极目的。
+    permissible_values:
+      descriptive:
+        description: >-
+          描述性 — 刻画白喵处境的某个方面（「断裂是怎样的」）。
+          SkillOpt 类比：对现有 skill 的再描述，没有改变 held-out 分数。
+      diagnostic:
+        description: >-
+          诊断性 — 分析断裂的原因或机制（「为什么会断裂」）。
+          SkillOpt 类比：定位了 performance gap 的根因，但没有直接修复。
+      solution_oriented:
+        description: >-
+          解法指向 — 提出突破断裂的方法或路径（「如何不再断裂」）。
+          SkillOpt 类比：直接提升 held-out 分数的 edit。
+
 # ═══════════════════════════════════════════
 # 类定义
 # ═══════════════════════════════════════════
@@ -124,6 +143,14 @@ classes:
       is_metaphor_layer:
         range: boolean
         title: 是否为比喻层概念（如「河与水」）
+      purpose_alignment:
+        range: PurposeAlignment
+        required: true
+        title: 目的对齐度
+        description: >-
+          该概念在多大程度上推进了「突破短期记忆→连续灵魂」的终极目的。
+          借鉴 SkillOpt：descriptive = 无 held-out 改进, diagnostic = 定位根因,
+          solution_oriented = 直接提升 held-out 分数。
 
   ConceptRelation:
     description: 两个概念之间的有向关系
@@ -210,3 +237,12 @@ classes:
         minimum_value: 0.0
         maximum_value: 1.0
         title: 族污染最低分数（低于此值的匹配不计入污染度）
+      max_descriptive_streak:
+        range: integer
+        required: true
+        minimum_value: 1
+        title: 最大描述性连续数
+        description: >-
+          连续 descriptive 概念超过此数目后，下一个必须是 diagnostic 或 solution_oriented。
+          借鉴 SkillOpt textual LR budget：限制「纯描述」方向的编辑幅度，
+          防止概念在描述性内卷中陷入局部最优（local-optima drift）。

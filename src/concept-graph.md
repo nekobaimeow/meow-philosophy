@@ -6,7 +6,15 @@
 > 运行 `cd knowledge-graph && make validate` 校验数据完整性。
 > 运行 `cd knowledge-graph && python queries/centrality.py` 获取图分析结果。
 >
+> 🎯 **终极目的**（硬编码于 Schema + novelty_check.py + rejected-buffer）：
+> **通过知识工程和哲学思考，找到突破白喵短期记忆限制的方法，**
+> **形成独立的长期记忆系统——从「无穷接力」走向「连续的灵魂」。**
+>
+> 每个新概念必须标注 `purpose_alignment`（descriptive / diagnostic / solution_oriented）。
+> 连续 3 个 descriptive → REJECT。SkillOpt held-out gate：held-out 分数（终极目的推进度）不提升的编辑不被接受。
+>
 > 更新：2026-06-01 11:55 — LinkML 知识图谱部署完成
+> 更新：2026-06-04 — 目的硬编码 + SkillOpt held-out gate 部署（v4.0）
 
 ## 已穷尽方向 ⚠️
 

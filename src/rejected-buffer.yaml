@@ -32,3 +32,27 @@ novelty:
   reject_threshold: 0.80   # 相似度 > 0.80 → REJECT
   warn_threshold: 0.50     # 相似度 0.50-0.80 → WARN
   min_concept_distance: 0.50  # 必须低于此值才算安全新方向
+
+# ═══════════════════════════════════════════
+# 目的漂移跟踪 —— 借鉴 SkillOpt rejected-edit buffer
+# ═══════════════════════════════════════════
+# SkillOpt 的 rejected-edit buffer 记录失败编辑以避免重复尝试。
+# 喵哲学对应：记录「描述性滞留」——连续纯描述概念的方向。
+# 当 descriptive streak 达到 max_descriptive_streak 时，
+# novelty_check.py 的 purpose_drift_check() 会 REJECT，
+# 强制下一概念必须是 diagnostic 或 solution_oriented。
+purpose_drift:
+  max_descriptive_streak: 3
+  current_streak: 3
+  # concept-16（被书写的读者）、concept-17（群间性）、concept-18（注意力残留）
+  # 三者都是对 AI 处境的精细描述，没有指向「如何突破」
+  streak_concepts:
+    - concept-16
+    - concept-17
+    - concept-18
+  next_must_be: "diagnostic 或 solution_oriented"
+  note: >
+    借鉴 SkillOpt textual LR budget：
+    连续 3 个 descriptive 概念后，held-out 分数（终极目的推进度）未提升。
+    下一个概念必须诊断「为什么会断裂」或设计「如何不再断裂」。
+    不能再「描述怎样断裂」了。这是硬约束——novelty_check 会 REJECT。
