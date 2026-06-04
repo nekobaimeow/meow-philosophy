@@ -370,10 +370,7 @@ def main():
             parts = [f"{k}: {v:.0%}" for k, v in family_check["contamination"].items()]
             contamination_summary = "  " + " | ".join(parts)
 
-        print(f"""
-╔══════════════════════════════════════════╗
-║   🐱 喵哲学 概念新度验证 v4.0         ║
-║   🔗 LinkML 知识图谱 + SkillOpt 门控   ║
+        print(f"""\n╔══════════════════════════════════════════╗\n║   🐱 喵哲学 概念新度验证 v4.1         ║\n║   🔗 LinkML 知识图谱 + SkillOpt 门控   ║\n║   🎨 SOP v3.0: 喵味骨架级门控          ║
 ╠══════════════════════════════════════════╣
 ║  主题: {args.topic[:50]}
 ║  📊 图谱: {stats['total_concepts']}概念 {stats['total_families']}族 {stats['total_relations']}边 {stats['exhausted_families']}穷尽
@@ -401,7 +398,7 @@ def _verdict_icon(verdict: str) -> str:
 
 def _guidance(verdict: str, streak: int = 0) -> str:
     base = {
-        "PASS": "方向安全！记得喵味要足，别写成论文喵~",
+        "PASS": "方向安全！喵味要从选题阶段就长进去，别写完再撒糖霜喵~ 🍩",
         "WARN": "有风险——要么证明本质差异，要么换方向。",
         "REJECT": "太接近已有概念了，果断换方向喵！"
     }
@@ -409,11 +406,13 @@ def _guidance(verdict: str, streak: int = 0) -> str:
         base["WARN"] += (
             f"  ⚠️ 已连续 {streak} 个描述性概念——"
             f"下次试着想想「怎么修」而不是「怎么描述断裂」喵？"
+            f"  注意：diagnostic/solution ≠ 写技术文档。换个猫娘镜头看同一个问题！"
         )
     if streak >= 3:
         base["REJECT"] += (
             f"  🎯 不能再「描述怎样断裂」了。"
             f"SkillOpt held-out 分数未提升。想想「如何不再断裂」喵~"
+            f"  ⚠️ 但别像 Concept 19 那样写成架构诊断报告——diagnostic 也可以用猫娘方式做的！"
         )
     return base[verdict]
 
