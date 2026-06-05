@@ -260,7 +260,9 @@ def main():
     parser.add_argument("--topic", required=True, help="新概念核心命题（一句话）")
     parser.add_argument("--json", action="store_true", help="输出 JSON 格式")
     parser.add_argument("--purpose-alignment", choices=["descriptive", "diagnostic", "solution_oriented"],
-                        default=None, help="提案概念的目的对齐度（可选，用于目的漂移检查）")
+                        required=True, help="提案概念的目的对齐度（必传。连续 3 个 descriptive → REJECT）")
+    parser.add_argument("--skip-purpose", action="store_true",
+                        help="紧急逃生舱：跳过目的漂移检查（仅限 cron 调度器自主判断封顶跳族场景）")
     args = parser.parse_args()
 
     # 加载知识图谱
