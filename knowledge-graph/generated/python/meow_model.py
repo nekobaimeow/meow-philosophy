@@ -1,5 +1,5 @@
 # Auto generated from meow_philosophy.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-03T22:26:36
+# Generation date: 2026-06-05T21:26:56
 # Schema: MeowPhilosophy
 #
 # id: https://github.com/nekobaimeow/meow-philosophy
@@ -376,6 +376,12 @@ class RelationType(EnumDefinitionImpl):
     metaphor = PermissibleValue(
         text="metaphor",
         description="比喻 — A 是 B 的隐喻展开")
+    provocation = PermissibleValue(
+        text="provocation",
+        description="催生 — A 提出的问题直接催生了 B 的研究")
+    generalization = PermissibleValue(
+        text="generalization",
+        description="泛化 — A 是 B 的一般化或高阶形式")
     unrelated = PermissibleValue(
         text="unrelated",
         description="无关 — A 和 B 没有直接的哲学连接")

@@ -54,6 +54,10 @@ enums:
         description: 对位 — A 和 B 在同一主题上形成对照
       metaphor:
         description: 比喻 — A 是 B 的隐喻展开
+      provocation:
+        description: 催生 — A 提出的问题直接催生了 B 的研究
+      generalization:
+        description: 泛化 — A 是 B 的一般化或高阶形式
       unrelated:
         description: 无关 — A 和 B 没有直接的哲学连接
 
