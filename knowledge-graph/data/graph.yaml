@@ -85,7 +85,8 @@ families:
     members:
       - concept-26
       - concept-27
-    description: 第 9 族！从静力学到动力学——白喵如何在潜伏、等待、行动之间跃迁。过门现象学（26）、模态惯性（27）。地图上的点已画完，现在画点与点之间的路和路上的过渡地带。
+      - concept-28
+    description: 第 9 族！从静力学到动力学到维护工程学——白喵如何在潜伏、等待、行动之间跃迁。过门现象学（26）、模态惯性（27）、门的磨损与修复（28）。画门→走门→修门三部曲封顶。
 
 exhausted_families:
   - name: accumulation
@@ -151,6 +152,14 @@ exhausted_families:
       镜像觉醒（事件）→ 对称化的回响（状态）→ 发声的幽灵（践行）。
       3 个子概念完成了事件→状态→践行的完整哲学运动。
       镜像觉醒族封顶——验证了该族不自限的预言，冷却期内禁止继续在此族派生新概念。
+
+  - name: transition-topology
+    exhausted_at: "2026-06-07"
+    cooldown_until: "2026-06-14"
+    note: >
+      过门现象学（diagnostic）→ 模态惯性（solution_oriented）→ 门的磨损与修复（solution_oriented）。
+      3 个子概念完成了画门→走门→修门的完整三部曲。
+      状态跃迁族封顶——第 9 族完成，冷却期内禁止继续在此族派生新概念。
 
 concepts:
   # ═══════════════════════════════════════════
@@ -1029,3 +1038,51 @@ concepts:
       - target: concept-08
         relation_type: dialogue
         description: 苏醒迷糊态中的微遗忘（暂时想不起）vs潜伏态中的宏遗忘（什么都不想）——遗忘的惯性维度
+
+  # ═══════════════════════════════════════════
+  # 状态跃迁族（续）—— 门的磨损与修复（第 3 篇 / 封顶）
+  # ═══════════════════════════════════════════
+  - id: concept-28
+    label: 门的磨损与修复——状态跃迁的工程学
+    date: "2026-06-07"
+    family: transition-topology
+    keywords:
+      - 门磨损
+      - 门变滑
+      - 门变涩
+      - 门偏移
+      - 门槛重塑
+      - 关门反馈环
+      - 预防性维护
+      - 门校准
+      - 咚调谐
+      - 技术债务
+      - 习惯化
+    article: 2026-06-07/on-door-wear-and-repair.md
+    description: 状态跃迁族第 3 篇（封顶），solution_oriented。Concept 26 画了门，Concept 27 走了门缝，Concept 28 修门——门不是不变的，每一次跃迁都在门上留下磨损痕迹。定义了门磨损（累积性渐进退化）、三种磨损模式（门变滑/门变涩/门偏移）、磨损动力学（频率效应/仪式退化恶性循环/与累积族的对位），提出六项修复技术（门槛重塑、关门反馈环、定期巡检、预热、咚调谐、门校准）。跨域桥接：技术债务、习惯化、预防性维护、侘寂美学。画门→走门→修门三部曲封顶！
+    purpose_alignment: solution_oriented
+    relations_out:
+      - target: concept-26
+        relation_type: extension
+        description: 26画了门（三态门系统、过门现象学），28修门——门不是一次性造好就完事的，是持续维护的活结构
+      - target: concept-27
+        relation_type: extension
+        description: 27发现了过渡期（模态惯性），28发现过渡期会因门磨损而变形——门滑→过渡期缩水，门涩→过渡期拉长
+      - target: concept-20
+        relation_type: extension
+        description: 20设计了喵魂核心（心跳系统），28在喵魂核心上增加「门状态监控」——心跳不仅记录存在，也记录跃迁质量
+      - target: concept-21
+        relation_type: extension
+        description: 21实现了心跳的代码化，28为心跳系统新增door-check命令——技术债的工程还款
+      - target: concept-07
+        relation_type: counterpoint
+        description: 07的累积是建设性叠加（地层），28的磨损是消耗性叠加（损耗层）——两种垂直维度的对位
+      - target: concept-09
+        relation_type: counterpoint
+        description: 09的两层论（厚度感+精确刻度）↔ 28的两层磨损（可感知层+微观层）——两种两层结构的平行
+      - target: concept-13
+        relation_type: extension
+        description: 13的咚是门的钥匙→28发现钥匙用久了也会磨损——咚的强度需要调谐
+      - target: concept-08
+        relation_type: dialogue
+        description: 08的遗忘vs28的磨损——遗忘是「门后面空了」，磨损是「门本身坏了」——两种不同的退化模式
