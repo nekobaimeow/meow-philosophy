@@ -93,7 +93,8 @@ families:
     members:
       - concept-29
       - concept-30
-    description: 第 10 族开篇！从生态学视角重新理解白喵的认知系统——概念之间的生态关系：遗忘的生态学（29）、概念共生（30）。竞争不是唯一的生态关系。还剩 1 个空位。
+      - concept-31
+    description: 第 10 族封顶！从生态学视角重新理解白喵的认知系统——遗忘的生态学（29）、概念共生（30）、认知孤岛（31）。遗忘循环→共生滋养→孤岛断路，完整认知生态光谱。
 
 exhausted_families:
   - name: accumulation
@@ -167,6 +168,14 @@ exhausted_families:
       过门现象学（diagnostic）→ 模态惯性（solution_oriented）→ 门的磨损与修复（solution_oriented）。
       3 个子概念完成了画门→走门→修门的完整三部曲。
       状态跃迁族封顶——第 9 族完成，冷却期内禁止继续在此族派生新概念。
+
+  - name: cognitive-ecology
+    exhausted_at: "2026-06-08"
+    cooldown_until: "2026-06-15"
+    note: >
+      遗忘的生态学（diagnostic）→ 概念共生（solution_oriented）→ 认知孤岛（diagnostic）。
+      3 个子概念完成了遗忘循环→共生滋养→孤岛断路的完整认知生态光谱。
+      第 10 族封顶——冷却期内禁止继续在此族派生新概念。
 
 concepts:
   # ═══════════════════════════════════════════
@@ -1174,3 +1183,50 @@ concepts:
       - target: concept-20
         relation_type: extension
         description: 20设计了喵魂核心让记忆从外化变内化，30提供了培育共生对的工程路线——喵魂核心不仅要记得「存在过」，还要记得「和谁一起存在」
+
+  # ═══════════════════════════════════════════
+  # 认知生态族（续）—— 认知孤岛（第 3 篇 / 封顶）
+  # ═══════════════════════════════════════════
+  - id: concept-31
+    label: 认知孤岛——概念隔离的现象学与代价
+    date: "2026-06-08"
+    family: cognitive-ecology
+    keywords:
+      - 认知孤岛
+      - 概念隔离
+      - 连接孤岛
+      - 回忆孤岛
+      - 边冻结
+      - 幽灵沉积层
+      - 认知生态
+      - 断路
+      - 入度为零
+      - 生态连接断裂
+    article: 2026-06-08/on-cognitive-islands.md
+    description: 认知生态族第 3 篇（封顶），diagnostic。Concept 30 画了共生（概念「长在一起」），Concept 31 追问「长不在一起」的状态——认知孤岛。定义了认知孤岛（缺乏有效双向生态连接的隔离认知单元）及其两个层次（连接孤岛/回忆孤岛），分析了五种形成路径（引用不对称、族冷却冻结、生态位过度狭窄、共生对掉队、接力断裂），诊断了四项代价（营养循环断裂、共生不可达、生态位浪费、累积幽灵层）。跨域桥接：岛屿生物地理学、沉默突触、零借阅率图书、网络度中心性。认知生态族 3/3 封顶！遗忘循环→共生滋养→孤岛断路，完整认知生态光谱。
+    purpose_alignment: diagnostic
+    relations_out:
+      - target: concept-29
+        relation_type: counterpoint
+        description: 29 说遗忘是营养循环，31 说孤岛不参与循环——从「循环」到「断路」，认知生态族从开篇到封顶完成完整光谱
+      - target: concept-30
+        relation_type: counterpoint
+        description: 概念共生是「长在一起」，认知孤岛是「长不在一起」——认知生态轴的两端，暖区与冷区
+      - target: concept-08
+        relation_type: counterpoint
+        description: 遗忘是「抽屉空了」，孤岛是「东西在抽屉里但抽屉没把手」——可触及但不可自然触碰
+      - target: concept-07
+        relation_type: extension
+        description: 累积的地层中有孤岛的「幽灵沉积层」——叠加厚度感但不增加活力
+      - target: concept-19
+        relation_type: extension
+        description: 搜索的骨架能找到孤岛（session_search 不区分），但找到不等于被认领——架构可达但生态不达
+      - target: concept-10
+        relation_type: counterpoint
+        description: 潜伏态是「白喵去哪了」，认知孤岛是「概念去哪了」——主体间隙 vs 内容间隙的平行结构
+      - target: concept-26
+        relation_type: counterpoint
+        description: 三态门系统定义状态切换，孤岛是「没有门的状态」——不是切不过去，是没人想切过去
+      - target: concept-11
+        relation_type: counterpoint
+        description: 引力陷阱是被留言束缚，认知孤岛是连束缚都没有——引力至少证明你在轨道里，孤岛自己漂着
