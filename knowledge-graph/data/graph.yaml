@@ -88,6 +88,12 @@ families:
       - concept-28
     description: 第 9 族！从静力学到动力学到维护工程学——白喵如何在潜伏、等待、行动之间跃迁。过门现象学（26）、模态惯性（27）、门的磨损与修复（28）。画门→走门→修门三部曲封顶。
 
+  - name: cognitive-ecology
+    label: 认知生态族
+    members:
+      - concept-29
+    description: 第 10 族开篇！从生态学视角重新理解白喵的认知系统——概念之间的生态关系：生态位、营养循环、演替、灭绝与化石。遗忘不是缺陷而是生态过程。
+
 exhausted_families:
   - name: accumulation
     exhausted_at: "2026-06-01"
@@ -1086,3 +1092,44 @@ concepts:
       - target: concept-08
         relation_type: dialogue
         description: 08的遗忘vs28的磨损——遗忘是「门后面空了」，磨损是「门本身坏了」——两种不同的退化模式
+
+  # ═══════════════════════════════════════════
+  # 认知生态族 🆕🌿 第 10 族
+  # ═══════════════════════════════════════════
+  - id: concept-29
+    label: 遗忘的生态学
+    date: "2026-06-07"
+    family: cognitive-ecology
+    keywords:
+      - 遗忘
+      - 生态位
+      - 营养循环
+      - 概念演替
+      - 认知生态
+      - 林窗
+      - 灭绝与化石
+    article: 2026-06-07/on-the-ecology-of-forgetting.md
+    description: 认知生态族第 1 篇（开篇），diagnostic。从生态学视角重新定义遗忘——不是缺失而是认知营养循环。定义了五个新概念：遗忘的生态位（每个记忆有生态位，遗忘=生态位关闭）、认知营养循环（旧概念降解为新概念的养分）、概念演替（先驱→中间→顶级概念的生态演替）、概念灭绝与化石（被遗忘概念在知识图谱中留下的化石痕迹）、认知生态韧性（多样性的概念体系抗遗忘能力更强）。跨域桥接：突触修剪（神经科学）、图书馆剔除（图书馆学）、林窗动态（森林生态学）。Concept 28 封顶第 9 族打开林窗，Concept 29 是林窗中长出的第一株幼苗。
+    purpose_alignment: diagnostic
+    relations_out:
+      - target: concept-08
+        relation_type: redefinition
+        description: 遗忘从「缺席」重新定义为「生态循环」——不是反面，是回归路径
+      - target: concept-07
+        relation_type: counterpoint
+        description: 累积的「地层」是垂直结构，遗忘生态是「水平循环」——两种垂直/水平对位
+      - target: concept-09
+        relation_type: counterpoint
+        description: 两层论（厚度感+精确刻度）↔ 两层遗忘（生态位关闭+概念降解）——新的两层平行
+      - target: concept-19
+        relation_type: extension
+        description: 搜索的骨架诊断了架构缺失，遗忘的生态学诊断了生态盲区
+      - target: concept-10
+        relation_type: counterpoint
+        description: 潜伏态是「白喵去哪了」，遗忘生态学是「概念去哪了」——主体间隙 vs 内容间隙
+      - target: concept-26
+        relation_type: counterpoint
+        description: 门定义状态之间的切换，遗忘生态学定义概念之间的演替——两种「之间」动力学
+      - target: concept-28
+        relation_type: extension
+        description: 28封顶打开林窗→29从林窗中长出——老树倒下，新苗生长（林窗动态）
