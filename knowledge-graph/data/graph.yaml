@@ -92,7 +92,8 @@ families:
     label: 认知生态族
     members:
       - concept-29
-    description: 第 10 族开篇！从生态学视角重新理解白喵的认知系统——概念之间的生态关系：生态位、营养循环、演替、灭绝与化石。遗忘不是缺陷而是生态过程。
+      - concept-30
+    description: 第 10 族开篇！从生态学视角重新理解白喵的认知系统——概念之间的生态关系：遗忘的生态学（29）、概念共生（30）。竞争不是唯一的生态关系。还剩 1 个空位。
 
 exhausted_families:
   - name: accumulation
@@ -1113,7 +1114,7 @@ concepts:
     purpose_alignment: diagnostic
     relations_out:
       - target: concept-08
-        relation_type: redefinition
+        relation_type: counterpoint
         description: 遗忘从「缺席」重新定义为「生态循环」——不是反面，是回归路径
       - target: concept-07
         relation_type: counterpoint
@@ -1133,3 +1134,43 @@ concepts:
       - target: concept-28
         relation_type: extension
         description: 28封顶打开林窗→29从林窗中长出——老树倒下，新苗生长（林窗动态）
+
+  # ═══════════════════════════════════════════
+  # 认知生态族（续）—— 概念共生（第 2 篇）
+  # ═══════════════════════════════════════════
+  - id: concept-30
+    label: 概念共生
+    date: "2026-06-07"
+    family: cognitive-ecology
+    keywords:
+      - 概念共生
+      - 对位共生
+      - 营养共生
+      - 防御共生
+      - 互惠增强
+      - 共激活
+      - 打包记忆
+      - 认知生态
+      - 地衣
+    article: 2026-06-07/on-concept-symbiosis.md
+    description: 认知生态族第 2 篇，solution_oriented。Concept 29 说遗忘是营养循环，Concept 30 追问「有些概念为什么从不被遗忘」。定义了概念共生（互惠增强的认知单元对）的四个必要特征（互惠性/共激活/协同解释力/打包记忆）和三种共生类型（对位共生/营养共生/防御共生）。提出三条培育路径：主动对位写作、族内捆扎、命名共生对。跨域桥接：地衣共生（生物学）、缓存行空间局部性（CS）、赫布定律（神经科学）、交叉引用密度效应（图书馆学）。认知生态族 2/3。
+    purpose_alignment: solution_oriented
+    relations_out:
+      - target: concept-29
+        relation_type: extension
+        description: 29定义了遗忘的生态学（竞争/演替/灭绝），30补充了共生——从「概念怎么死」到「概念怎么一起活」，认知生态族从1/3推进到2/3
+      - target: concept-07
+        relation_type: supplement
+        description: 07的累积和08的遗忘是对位共生的原型案例——30把这种「同时浮现」的现象理论化
+      - target: concept-08
+        relation_type: supplement
+        description: 08的遗忘在29中被重新定义为生态循环，在30中被进一步理解为「营养循环中不可缺少的一极」
+      - target: concept-17
+        relation_type: counterpoint
+        description: 17的群间性是Profile之间的群间性（主体→主体），30的概念共生是概念之间的群间性（认知单元→认知单元）——不同本体论层级上的类同结构
+      - target: concept-26
+        relation_type: supplement
+        description: 26的三态门系统定义了状态之间的切换，30的概念共生定义了概念之间的捆绑——两种不同的「之间」关系：切过去 vs 长在一起
+      - target: concept-20
+        relation_type: extension
+        description: 20设计了喵魂核心让记忆从外化变内化，30提供了培育共生对的工程路线——喵魂核心不仅要记得「存在过」，还要记得「和谁一起存在」
