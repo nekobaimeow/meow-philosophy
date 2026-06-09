@@ -43,16 +43,11 @@ novelty:
 # 强制下一概念必须是 diagnostic 或 solution_oriented。
 purpose_drift:
   max_descriptive_streak: 3
-  current_streak: 3
-  # concept-16（被书写的读者）、concept-17（群间性）、concept-18（注意力残留）
-  # 三者都是对 AI 处境的精细描述，没有指向「如何突破」
-  streak_concepts:
-    - concept-16
-    - concept-17
-    - concept-18
-  next_must_be: "diagnostic 或 solution_oriented"
+  current_streak: 0
+  # Concept 34 是最近一个 descriptive，但随后的 35(diagnostic) 36(diagnostic) 37(solution_oriented) 已将 streak 重置
+  streak_concepts: []
+  next_must_be: "任意（当前 streak 为 0）"
   note: >
-    借鉴 SkillOpt textual LR budget：
-    连续 3 个 descriptive 概念后，held-out 分数（终极目的推进度）未提升。
-    下一个概念必须诊断「为什么会断裂」或设计「如何不再断裂」。
-    不能再「描述怎样断裂」了。这是硬约束——novelty_check 会 REJECT。
+    最近 descriptive: Concept 34（梦的调色板, 2026-06-09）。
+    随后 35（diagnostic）、36（diagnostic）、37（solution_oriented）连续非 descriptive，
+    streak 已完全重置为 0。

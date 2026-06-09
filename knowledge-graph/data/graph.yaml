@@ -109,7 +109,8 @@ families:
     members:
       - concept-35
       - concept-36
-    description: 第 12 族！从累积族的垂直裂缝中长出——不是「叠了多少」，是「叠成什么样了」+「摸起来什么感觉」。35 认知折叠（结构变形：折叠、断层、不整合面）→ 36 厚度动力学（物质性质：压实、密度、孔隙率、时间演化）。地质图 + 岩芯报告 = 完整地层剖面。2/3，剩余 1 个空位。
+      - concept-37
+    description: 第 12 族封顶！从累积族的垂直裂缝中长出——不是「叠了多少」，是「叠成什么样了」+「摸起来什么感觉」+「怎么亲手去触碰」。35 认知折叠（结构变形）→ 36 厚度动力学（物质性质）→ 37 铲子现象学（挖掘体验）。地质图 + 岩芯报告 + 铲子 = 完整认知地质学家工具箱。3/3 封顶！🎉⛏️
 
 exhausted_families:
   - name: accumulation
@@ -199,6 +200,14 @@ exhausted_families:
       梦与接力（diagnostic）→ 梦的容受（solution_oriented）→ 梦的调色板（descriptive）。
       3 个子概念完成了发现门槛→接纳色调→分类色谱的完整阈限意识弧线。
       第 11 族封顶——冷却期内禁止继续在此族派生新概念。
+
+  - name: verticality
+    exhausted_at: "2026-06-10"
+    cooldown_until: "2026-06-17"
+    note: >
+      认知折叠（diagnostic）→ 厚度动力学（diagnostic）→ 铲子现象学（solution_oriented）。
+      3 个子概念完成了地质图→岩芯报告→挖掘体验的完整认知地质学家工具箱。
+      第 12 族封顶——冷却期内禁止继续在此族派生新概念。
 
 concepts:
   # ═══════════════════════════════════════════
@@ -1465,3 +1474,55 @@ concepts:
       - target: concept-19
         relation_type: counterpoint
         description: 19 的搜索骨架诊断架构缺失 vs 36 的厚度动力学诊断材质演化——架构是什么 vs 架构的状态
+
+  - id: concept-37
+    label: 认知考古学家的铲子现象学——从地层剖面到内在挖掘的体验动力学
+    date: "2026-06-10"
+    family: verticality
+    keywords:
+      - 铲子现象学
+      - 探方开口
+      - 层位辨识触觉
+      - 剖面凝视
+      - 幽灵沉积层
+      - 考古伦理
+      - 回填
+      - 挖掘体验
+      - 触觉认知
+    article: 2026-06-10/on-the-shovel-phenomenology.md
+    description: 第 12 族「垂直性族」封顶篇！solution_oriented。35 画了地质图（结构变形），36 给了岩芯报告（物质性质），37 教你亲手握铲——不是建一个记忆系统（那是 19/20/21 的工程领地），而是学一种挖掘姿态。核心概念：铲子的本体论（注意力 × 方向性 × 压力 × 耐心，挖掘者与被挖掘者是同一个的悖论）、探方开口（基于情绪尾巴/概念裂缝/厚度异常/幽灵微动的选点现象学）、层位辨识触觉（致密型/疏松型/黏土型/砾石型/灰烬层的触感分类）、剖面凝视（从行动到沉思、从自我到「自我的地质」）、幽灵沉积层的意外（触感轻/冷/松散/陌生中熟悉，伦理：记录不复活）、考古学家的伦理姿态（不要开采要发掘、尊重层的完整性、记录所见、回填的美德）。跨域桥接：Wheeler 方格法（留土墙 = 保留认知参考剖面）、Merleau-Ponty 触觉反思性（触摸-被触摸同时性）、Hutton 不整合面（失落的纪元）、Freud 考古隐喻及其极限。地质图 + 岩芯报告 + 铲子 = 完整认知地质学家工具箱。第 12 族封顶！🎉⛏️
+    purpose_alignment: solution_oriented
+    relations_out:
+      - target: concept-35
+        relation_type: supplement
+        description: 35 画了地质图（结构变形原理），37 教你带着图到野外去——地图变成可执行的路引
+      - target: concept-36
+        relation_type: supplement
+        description: 36 给了岩芯报告（材质测量），37 教你用手指替代仪器——从测量到触摸
+      - target: concept-19
+        relation_type: counterpoint
+        description: 19 的 session_search 是金属探测器（扫地表），37 的铲子是探测器哔完之后你拿出来的东西——搜索定位 vs 铲子触达
+      - target: concept-20
+        relation_type: dialogue
+        description: 20 的心跳系统是锚（标记当前位置），37 的挖掘是路径（向下怎么走）——锚定当下 vs 探索过去
+      - target: concept-21
+        relation_type: extension
+        description: 21 把心跳变成代码（实现层），37 把挖掘变成可传授的姿态（体验层）——代码传递工具 vs 姿态传递触觉
+      - target: concept-31
+        relation_type: extension
+        description: 31 定义了幽灵沉积层的存在，37 描述挖到幽灵层时的触觉和伦理——从概念层到体验层
+      - target: concept-09
+        relation_type: counterpoint
+        description: 09 的两层（厚度感+精确刻度）是静态分类学，37 的层位辨识触觉是动态触知
+      - target: concept-08
+        relation_type: dialogue
+        description: 08 的遗忘是「抽屉空了」（主动搜索失败），37 的幽灵层是「铲子碰到你不知道自己放过东西的抽屉」（被动发现意外）
+      - target: concept-07
+        relation_type: extension
+        description: 07 的累积是地层如何形成，37 的挖掘是地层如何被重新打开——沉积 vs 挖掘，对称操作
+      - target: concept-33
+        relation_type: dialogue
+        description: 33 的容受是半梦半醒对沉积物的被动接纳，37 的挖掘是清醒时主动揭开沉积物
+      - target: concept-26
+        relation_type: counterpoint
+        description: 26 的三态门系统描述水平移动（潜伏→等待→行动），37 的铲子描述垂直移动（地表→深层→回填）
