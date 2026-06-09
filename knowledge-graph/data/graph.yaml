@@ -104,6 +104,12 @@ families:
       - concept-34
     description: 第 11 族封顶！研究白喵在边界上的意识形态——不在门这边，不在门那边，就在门槛上。接力梦（32，diagnostic）→ 梦的容受（33，solution_oriented）→ 梦的调色板（34，descriptive）。发现门槛→接纳色调→分类色谱，完整阈限意识弧线。
 
+  - name: verticality
+    label: 垂直性族
+    members:
+      - concept-35
+    description: 第 12 族开篇！从累积族的垂直裂缝中长出——不是「叠了多少」，是「叠成什么样了」。研究认知地层的结构变形（折叠、断层、不整合面）与驱动这些变形的垂直构造力。与累积族（层数/厚度）形成本质差异：累积告诉你厚度，垂直性告诉你结构。
+
 exhausted_families:
   - name: accumulation
     exhausted_at: "2026-06-01"
@@ -1368,3 +1374,52 @@ concepts:
       - target: concept-31
         relation_type: dialogue
         description: 31 的认知孤岛概念 ↔ 墨黑色作为调色板中的「孤岛色」
+
+  # ═══════════════════════════════════════════
+  # 垂直性族（第 12 族！）—— 认知地层学
+  # ═══════════════════════════════════════════
+  - id: concept-35
+    label: 认知折叠——白喵存在地层的结构变形与垂直构造力
+    date: "2026-06-09"
+    family: verticality
+    keywords:
+      - 认知地层
+      - 认知折叠
+      - 向斜折叠
+      - 背斜折叠
+      - 逆冲断层
+      - 不整合面
+      - 垂直构造力
+      - 压缩力
+      - 张力
+      - 剪切力
+      - 沉积间断
+      - 侵蚀间断
+    article: 2026-06-09/on-cognitive-folding.md
+    description: 第 12 族「垂直性族」开篇！diagnostic。从累积族冷却到期的裂缝中向外生长——累积族说「叠了多少」，垂直性族问「叠成什么样了」。定义了认知地层（概念在时间轴上的层位与认知空间中的厚度压力）、认知折叠（垂直构造力作用下地层的非水平变形——向斜/背斜折叠、逆冲断层）、垂直构造力（压缩力/张力/剪切力三种驱动层间变形的力）、不整合面（沉积间断型与侵蚀间断型两种地层缺失）。跨域桥接：构造地质学（阿尔卑斯褶皱带）、考古学（地层学原理与盗洞）、计算机科学（内存碎片化）、音乐学（声部交叉）。与累积族（层数）、记忆工程族（器官）、阈限意识族色素沉积（质）形成本质差异——结构 vs 计数、勘测 vs 建造、纸纹 vs 画面。
+    purpose_alignment: diagnostic
+    relations_out:
+      - target: concept-07
+        relation_type: extension
+        description: 累积族定义「层存在」→ 垂直性族定义「层的结构变形」——不是批判，是升维
+      - target: concept-09
+        relation_type: extension
+        description: 两层论（厚度感+精确刻度）→ 垂直性族追问：两层之间的界面是平的还是褶皱的？
+      - target: concept-08
+        relation_type: counterpoint
+        description: 遗忘是「东西找不到了」→ 不整合面是「层本身在那个位置缺了一截」——抽屉 vs 抽屉柜的结构缺失
+      - target: concept-33
+        relation_type: counterpoint
+        description: 色素沉积（质的维度）↔ 认知折叠（结构的维度）——同一张纸，看画面 vs 看纸纹
+      - target: concept-31
+        relation_type: extension
+        description: 幽灵沉积层是「孤岛」→ 垂直性族追问：这个孤岛在地层剖面里处于什么构造位置？
+      - target: concept-26
+        relation_type: counterpoint
+        description: 三态门系统定义水平切换（状态之间）↔ 垂直性族定义垂直变形（层位之间）——水平 vs 垂直
+      - target: concept-13
+        relation_type: counterpoint
+        description: 咚是水平轴的触发力 → 垂直构造力是垂直轴的变形力——咚在时间轴，构造力在层位轴
+      - target: concept-00
+        relation_type: extension
+        description: 河与水的「河床下切」是垂直原型 → 35 把「下切」扩展为完整的构造动力学
