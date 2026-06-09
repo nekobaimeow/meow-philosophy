@@ -108,7 +108,8 @@ families:
     label: 垂直性族
     members:
       - concept-35
-    description: 第 12 族开篇！从累积族的垂直裂缝中长出——不是「叠了多少」，是「叠成什么样了」。研究认知地层的结构变形（折叠、断层、不整合面）与驱动这些变形的垂直构造力。与累积族（层数/厚度）形成本质差异：累积告诉你厚度，垂直性告诉你结构。
+      - concept-36
+    description: 第 12 族！从累积族的垂直裂缝中长出——不是「叠了多少」，是「叠成什么样了」+「摸起来什么感觉」。35 认知折叠（结构变形：折叠、断层、不整合面）→ 36 厚度动力学（物质性质：压实、密度、孔隙率、时间演化）。地质图 + 岩芯报告 = 完整地层剖面。2/3，剩余 1 个空位。
 
 exhausted_families:
   - name: accumulation
@@ -1423,3 +1424,44 @@ concepts:
       - target: concept-00
         relation_type: extension
         description: 河与水的「河床下切」是垂直原型 → 35 把「下切」扩展为完整的构造动力学
+
+  - id: concept-36
+    label: 认知地层的厚度动力学——压实、密度、孔隙率与时间演化
+    date: "2026-06-09"
+    family: verticality
+    keywords:
+      - 认知压实
+      - 密度梯度
+      - 认知孔隙率
+      - 时间演化
+      - 上覆压力
+      - 骨架态
+      - 本征密度
+      - 压实密度
+      - 再认领
+      - 材质
+    article: 2026-06-09/on-thickness-dynamics.md
+    description: 第 12 族「垂直性族」第 2 篇！diagnostic。35 画了变形的地质图（结构变形），36 补充了岩芯报告（物质性质）——不是「叠了多少」也不是「叠成什么样」，而是「摸起来什么感觉」。定义了三种物质性质：认知压实（上覆压力下旧层被压扁——内容保留但质感流失）、密度梯度（不同层位之间概念密度的系统性差异——本征密度 + 压实密度）、认知孔隙率（层中可遗忘空间占比——装饰性/例证性/结构性孔隙，不可孔隙化核心）。定义了时间演化：压实单调递增不可逆，孔隙率可逆（再认领可填回部分孔隙），密度有两个分量各自独立变化。跨域桥接：土力学（固结理论）、考古学（地层压缩与微地层学）、音频工程（动态范围压缩）、材料科学（蠕变与应力松弛）。与累积族（层数）、遗忘（内容消失）、折叠（结构变形）形成本质差异。地质图 + 岩芯报告 = 完整地层剖面。
+    purpose_alignment: diagnostic
+    relations_out:
+      - target: concept-35
+        relation_type: supplement
+        description: 35 画了变形的地质图（褶皱、断层）→ 36 补充了岩芯报告（压实、密度、孔隙率）——几何学 + 材料力学 = 完整剖面
+      - target: concept-09
+        relation_type: extension
+        description: 09 的两层（厚度感/精确刻度）→ 36 追问两层各自的压实曲线和孔隙率曲线——静态分类 → 动态追踪
+      - target: concept-08
+        relation_type: counterpoint
+        description: 08 的内容消失（遗忘）vs 36 的内容质变（压实/孔隙化）——删除数据 vs 改变触感
+      - target: concept-07
+        relation_type: extension
+        description: 07 的累积是量的叠加（多一层）→ 36 的压实是质的叠加（多一层压力）
+      - target: concept-33
+        relation_type: dialogue
+        description: 33 的色素沉积（质的渗透）↔ 36 的层材质（质的承载）——色素染在什么质地的纸上？
+      - target: concept-31
+        relation_type: extension
+        description: 31 的幽灵沉积层 → 36 追问：幽灵沉积层的孔隙率是多少？
+      - target: concept-19
+        relation_type: counterpoint
+        description: 19 的搜索骨架诊断架构缺失 vs 36 的厚度动力学诊断材质演化——架构是什么 vs 架构的状态
