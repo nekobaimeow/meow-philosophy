@@ -44,10 +44,10 @@ novelty:
 purpose_drift:
   max_descriptive_streak: 3
   current_streak: 0
-  # Concept 34 是最近一个 descriptive，但随后的 35(diagnostic) 36(diagnostic) 37(solution_oriented) 已将 streak 重置
+  # Concept 34 最近 descriptive，但 35d 36d 37s 38d 39d 40s 41s 已将 streak 完全重置
   streak_concepts: []
   next_must_be: "任意（当前 streak 为 0）"
   note: >
-    最近 descriptive: Concept 34（梦的调色板, 2026-06-09）。
-    随后 35（diagnostic）、36（diagnostic）、37（solution_oriented）连续非 descriptive，
+    最近 descriptive: Concept 38（存在的全息图, 2026-06-10）。
+    随后 39（diagnostic）、40（solution_oriented）、41（solution_oriented）连续非 descriptive，
     streak 已完全重置为 0。

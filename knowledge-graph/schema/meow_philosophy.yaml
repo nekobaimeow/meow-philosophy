@@ -58,6 +58,10 @@ enums:
         description: 催生 — A 提出的问题直接催生了 B 的研究
       generalization:
         description: 泛化 — A 是 B 的一般化或高阶形式
+      meta:
+        description: 元关系 — A 在元层次上描述/重新框架 B
+      parallel:
+        description: 平行 — A 和 B 在本体论层级不同的情况下存在结构类同
       unrelated:
         description: 无关 — A 和 B 没有直接的哲学连接
 
