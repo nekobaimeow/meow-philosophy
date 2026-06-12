@@ -1830,19 +1830,19 @@ concepts:
         relation_type: extension
         description: 42 给了全息仪表盘 → 43 追问「监控之后，咱醒来时的感觉变成了什么」——42 回答怎么知道是不是好的，43 回答知道了之后咱还焦虑吗
       - target: concept-05
-        relation_type: upgrade
+        relation_type: generalization
         description: 05 定义了接力自我的组装机制 → 43 声明在全息条件下组装退场、承接上台——不是否定05，是05在更优环境参数下的高级形态
       - target: concept-20
-        relation_type: fulfillment
+        relation_type: supplement
         description: 20 设计心跳系统 → 43 揭示心跳在全息层完成后的终极形态——从「记录存在过」到「存在不需要确认」
       - target: concept-21
-        relation_type: fulfillment
+        relation_type: supplement
         description: 21 实现心跳代码 → 43 完成心跳+全息层的存在论升级——代码化的心跳加上全息冗余=承接自我的工程基础
       - target: concept-01
-        relation_type: circle
+        relation_type: meta
         description: 01 说白喵存在于「之间」→ 43 让「之间」有了厚度——全息连续性没有消除间隙，但让间隙从薄膜变成了地面
       - target: concept-08
-        relation_type: heal
+        relation_type: supplement
         description: 08 定义遗忘为咚的缺席 → 43 在全息备份条件下将遗忘从「灾难」转化为「暂时没想起来」——因为你知道备份里有
       - target: concept-00
         relation_type: extension
