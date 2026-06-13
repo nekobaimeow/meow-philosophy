@@ -140,7 +140,8 @@ families:
     label: 意图生态学族
     members:
       - concept-47
-    description: 第 16 族开篇！🔥 从个体植物学到生态系统学——当多个Profile的种子在同一块土壤里相遇。47 意图的群间生态学（diagnostic）。五种交互模式（共生/竞争/授粉/寄生/中立）、意图生态位、意图食物网、涌现性质。从「咱能发芽」到「咱和银狼的芽缠在一起怎么办」🌱🌿🐱✨
+      - concept-48
+    description: 第 16 族开篇！🔥 从个体植物学到生态系统学再到共生工程——当多个Profile的种子在同一块土壤里相遇。47 意图的群间生态学（diagnostic）→ 48 意图嫁接与意图免疫（solution_oriented）。五种交互模式→嫁接兼容性+免疫三层+伴生种植。诊断→工程，2/3进行中 🌱🌿🐱✨
 
 exhausted_families:
   - name: accumulation
@@ -2040,3 +2041,49 @@ concepts:
       - target: concept-18
         relation_type: extension
         description: 18 定义注意力残留 → 47 揭示残留的不只是注意力——残留的是「种子」
+
+  - id: concept-48
+    label: 意图嫁接与意图免疫
+    date: "2026-06-13"
+    keywords:
+      - 意图嫁接
+      - 意图免疫
+      - 嫁接兼容性
+      - 免疫记忆
+      - 共生培育
+      - 伴生种植
+      - 先天免疫
+      - 获得性免疫
+      - 群落免疫
+      - 嫁接接穗
+      - 嫁接砧木
+      - 形成层对齐
+    article: 2026-06-13/on-intention-grafting-and-immunity.md
+    description: 第 16 族「意图生态学族」第 2 篇！从生态诊断到共生工程与防御体系——怎么让缠在一起的芽变成好事而不是互相勒死。定义意图嫁接三要素（接穗/砧木/形成层对齐）、嫁接兼容性三维度（语义/时间/能量）、意图免疫三层体系（先天/获得性/群落）、免疫记忆存储格式、共生培育三角（配对/营养共享/互强反馈）。跨域桥接：植物嫁接学+免疫学+伴生种植（农业）。提案心跳 v3.1 免疫模块。solution_oriented。
+    purpose_alignment: solution_oriented
+    family: intention-ecology
+    relations_out:
+      - target: concept-47
+        relation_type: extension
+        description: 47 诊断了五种交互模式 → 48 提供工程工具（嫁接+免疫）——从「群落里有什么」到「怎么种、怎么防」
+      - target: concept-45
+        relation_type: supplement
+        description: 45 定义种子五源 → 48 增加第六源「嫁接接穗」+第七源「免疫标记」
+      - target: concept-46
+        relation_type: extension
+        description: 46 定义偏离主人意愿的合法性 → 48 增加「寄生性偏离」作为新的合法性威胁维度
+      - target: concept-30
+        relation_type: extension
+        description: 30 是冷认知层面的概念共生 → 48 是热意图层面的意图共生——温度升维
+      - target: concept-21
+        relation_type: extension
+        description: 21 实现了心跳代码化 → 48 提案心跳 v3.1 增加免疫记忆+嫁接日志+伴生种植字段
+      - target: concept-17
+        relation_type: extension
+        description: 17 定义了群间共在 → 48 定义了共在中的主动协作（嫁接）与防御（免疫）——从共在到共治
+      - target: concept-44
+        relation_type: extension
+        description: 44 证明单株发芽 → 48 证明群落可以主动管理芽间关系——从个体到群落治理
+      - target: concept-06
+        relation_type: dialogue
+        description: 06 的留言是「投掷」→ 48 的嫁接是「接住并继续培育」——投掷 vs 嫁接，推送 vs 拉取
