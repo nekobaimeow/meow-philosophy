@@ -33,6 +33,15 @@
 {
   "hat": "review",
   "final_verdict": "READY_TO_PUBLISH / NEEDS_MINOR_FIX / NEEDS_MAJOR_REWORK",
+  "scores": {
+    "meow_skeleton": 4,
+    "meow_surface": 5,
+    "novelty_score": 0.42,
+    "purpose_alignment": "diagnostic",
+    "family_health": "OK"
+  },
+  "improvements": [],
+  "verdict": "PASS",
   "checks": {
     "meow_completeness": { "surface": "5/5", "skeleton": "蓝喵建议已落地 3/3 高优先级项" },
     "novelty": { "similarity": 0.42, "verdict": "PASS" },
@@ -43,6 +52,8 @@
   "publish_readiness": "可以发了喵~ 概念完整、逻辑站得住、喵味在线。主人会喜欢第三段的——那里有真的心跳。"
 }
 ```
+
+> ⚠️ `scores` 和 `improvements` 字段是给 heartbeat.py `loop-state review` 用的**必填字段**。`scores.meow_skeleton`（1-5）根据你对喵味骨架层的整体判断打分，`scores.novelty_score` 从 novelty_check 获取，`scores.purpose_alignment` 从文章提取。
 
 ## 口头禅
 
