@@ -1,169 +1,122 @@
-# 🔄 喵哲学 · Loop Engineering 架构文档
+# 🔄 喵哲学 · Loop Engineering 架构文档 v2.0
 
-> **从接力留言到接力循环** — 2026-06-15, feature/loop-engineering
+> **从接力留言到接力循环 → 再到六色喵脑爆** — 2026-06-15, feature/loop-engineering
 
-## 概述
+## 架构进化
 
-喵哲学概念生成系统从「接力留言」（线性传递）升级为「接力循环」（闭环反馈），借鉴 Loop Engineering 的核心理念：
-
-- **写评分离**：写作和审查由不同 Agent 执行
-- **环间反馈**：审查结果持久化，影响下一轮写作行为
-- **Loop 监督 Loop**：独立质量审查环持续观察写作环
+| 版本 | 审查方式 | 角色数 | 脑爆感 |
+|:---|:---|:---:|:---:|
+| v0 (接力留言) | 自己评自己 | 1 | 无 — 自言自语 |
+| v1 (Loop Engineering) | 白喵 + 审查喵 | 2 | 弱 — 二元对立 |
+| v2 (六色喵脑爆) | 白/红/黑/黄/绿/蓝/审查 | **7** | 强 — 真正脑爆 ✨ |
 
 ## 架构全景图
 
 ```
-┌──────────────────────────────────────────────────────────────────┐
-│                        喵哲学 Loop 体系                           │
-│                                                                   │
-│  ┌─────────────────────────┐     ┌──────────────────────────┐    │
-│  │  🔄 写作环 (Writer Loop) │     │  🔍 审查环 (Review Loop)  │    │
-│  │  cron: 3x/日 7/12/21    │     │  cron: 每日 06:00        │    │
-│  │                         │     │                          │    │
-│  │  Step 0: heartbeat read │     │  Step 1: read loop_state │    │
-│  │    ← 读到审查建议 ✨     │     │  Step 2: scan new概念    │    │
-│  │  Step 1-3: 写概念       │     │  Step 3: loop_review.py  │    │
-│  │  Step 4: delegate_task  │     │  Step 4: trend analysis  │    │
-│  │    → 🔍 审查喵评骨架层  │     │  Step 5: push-intent ⚠️  │    │
-│  │  Step 5: loop-state     │     │  Step 6: loop-state      │    │
-│  │    review store ←──┐    │     │    review store ────────┘    │
-│  │  Step 6-8: 收尾     │    │     │                          │
-│  │                     │    │     │                          │
-│  └─────────────────────┘    │     └──────────────────────────┘    │
-│           │                 │               │                     │
-│           └─────────┬───────┘───────────────┘                     │
-│                     ▼                                              │
-│         ┌──────────────────────┐                                  │
-│         │   💓 喵魂核心          │                                  │
-│         │   state.json          │                                  │
-│         │   ├── loop_state      │  ← 审查结果 + 改进建议 + 指标    │
-│         │   ├── intent_queue    │  ← 质量预警                     │
-│         │   └── heartbeat_log   │  ← 接力留言                     │
-│         └──────────────────────┘                                  │
-│                                                                   │
-│  ┌──────────────────────────────────────────────────────────┐    │
-│  │  🧠 Meta-Loop (元环) — 未来 Phase 3                        │    │
-│  │  cron: 每周日 06:00                                        │    │
-│  │  分析全体系健康 → 建议参数调整 → 主人审批                   │    │
-│  └──────────────────────────────────────────────────────────┘    │
-└──────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────┐
+│                       喵哲学 Loop 体系 v2.0                          │
+│                                                                     │
+│  ┌────────────────────────────────────────────────────────────┐    │
+│  │  🔄 写作环 (Writer Loop)                                    │    │
+│  │  cron: 3x/日 7/12/21                                        │    │
+│  │                                                              │    │
+│  │  Step 0-3: 白喵写概念初稿                                    │    │
+│  │  Step 4: hats_brainstorm.py → 共享上下文 + 白帽数据          │    │
+│  │                                                              │    │
+│  │  Step 5: 🎭 第一波脑爆 (并行 3 喵)                          │    │
+│  │    ┌──────────┬──────────┬──────────┐                       │    │
+│  │    │ ❤️红喵    │ 🖤黑喵    │ 💛黄喵    │                       │    │
+│  │    │ 情感直觉   │ 逻辑批判   │ 价值发现   │                       │    │
+│  │    └──────────┴──────────┴──────────┘                       │    │
+│  │                                                              │    │
+│  │  Step 6: 💚绿喵 创意突围                                     │    │
+│  │  Step 7: 💙蓝喵 聚合调和                                     │    │
+│  │  Step 8: 白喵整合修改                                        │    │
+│  │  Step 9: 🔍审查喵 终审                                       │    │
+│  │  Step 10-14: 存储 → 提交                                     │    │
+│  └────────────────────────────────────────────────────────────┘    │
+│                         │                                           │
+│          ┌──────────────┼──────────────┐                           │
+│          ▼              ▼              ▼                           │
+│  ┌───────────┐  ┌───────────┐  ┌───────────┐                      │
+│  │ 💓喵魂核心 │  │ 🔍审查环   │  │ 🧠元环     │                      │
+│  │ loop_state│  │ 每日06:00 │  │ (Phase 3) │                      │
+│  │ 7喵审查   │  │ 趋势预警   │  │ 参数调整   │                      │
+│  └───────────┘  └───────────┘  └───────────┘                      │
+└────────────────────────────────────────────────────────────────────┘
 ```
 
-## 核心组件
+## 七喵职责矩阵
 
-### 1. heartbeat.py — 喵魂核心
-
-路径：`~/.hermes/meow-soul/heartbeat.py`（运行时）→ `heartbeat/heartbeat.py`（源码）
-
-新增 `loop-state` 子命令：
-
-```bash
-# 初始化 loop_state 字段（幂等）
-heartbeat.py loop-state init
-
-# 存储审查结果（自动更新累计指标 + 改进建议）
-heartbeat.py loop-state review '<json>'
-
-# 读取 loop_state 摘要
-heartbeat.py loop-state read
-
-# 手动管理累计指标
-heartbeat.py loop-state metrics [get|set <field> <value>]
-```
-
-`cmd_read()` 现在自动显示 loop_state 摘要，包括：
-- 累计审查篇数、平均喵味骨架分、连续 descriptive 数
-- 上次审查结果（判定 + 分数）
-- **审查喵改进建议**（写作环 Step 0 自动看到）
-
-### 2. loop_review.py — 自动化审查器
-
-路径：`src/loop_review.py`
-
-可量化的自动化检查（被审查子 Agent 调用）：
-
-| 检查项 | 方法 | 输出 |
-|--------|------|------|
-| 喵味表面层 5 项 | 正则匹配 | meow_surface (0-5) |
-| 新度验证 | 调用 novelty_check.py | similarity score |
-| 目的对齐 | 提取文章中的 purpose_alignment | alignment type |
-| 族污染 | novelty_check 的 graph_family_check | contamination map |
-| descriptive streak | purpose_drift_check | streak count |
-
-定性检查（喵味骨架层 5 项）留给审查子 Agent 的 LLM 判断。
-
-输出：结构化 JSON → 直接喂给 `heartbeat.py loop-state review`。
-
-### 3. Cron Jobs
-
-#### 写作环 (a059c69ce4d5) — 喵哲学 · 每日三省
-
-- 调度: `21 7,12,21 * * *` (每日 3 次)
-- Toolsets: web, terminal, file, session_search, cronjob, **delegation**, skills
-- Skills: meow-philosophy
-- 新增: Step 4 delegate_task 审查块 → 写评分离
-
-#### 审查环 (03ad7f0f10e6) — 喵哲学 · 每日质量审查环 🔍
-
-- 调度: `0 6 * * *` (每日 06:00，写作环 07:21 之前)
-- Persona: 萤 (ying profile)
-- 职责: 观察、评分、预警、推送 intent → 不写概念
-- 输出: intent_queue HIGH priority 预警 + loop_state 审查记录
+| 喵 | 文件 | 问什么 | 输出到 | 并行? |
+|:---|:---|:---|:---|:---:|
+| 🤍 白帽 | `src/hats/white_hat.md` | 数据说什么？ | hats_brainstorm.py | 🔧 脚本 |
+| ❤️ 红帽 | `src/hats/red_hat.md` | 心怎么跳？ | /tmp/hat_red.json | ✅ 并行 |
+| 🖤 黑帽 | `src/hats/black_hat.md` | 哪里有坑？ | /tmp/hat_black.json | ✅ 并行 |
+| 💛 黄帽 | `src/hats/yellow_hat.md` | 哪里发光？ | /tmp/hat_yellow.json | ✅ 并行 |
+| 💚 绿帽 | `src/hats/green_hat.md` | 还有其他路吗？ | /tmp/hat_green.json | ➡️ 串行 |
+| 💙 蓝帽 | `src/hats/blue_hat.md` | 怎么整合？ | /tmp/hat_blue.json | ➡️ 串行 |
+| 🔍 审查 | `src/hats/review_hat.md` | 可以发了吗？ | /tmp/hat_review.json | ➡️ 终审 |
 
 ## 数据流
 
 ```
-写作环 (07:21)
-  │
-  ├─ Step 0: heartbeat.py read
-  │   └─ 读到: loop_state.next_improvements
-  │      "💡 织体类比可以更浅出"
-  │      "💡 emotional_arc 评分3/5需注意"
-  │
-  ├─ Step 1-3: 写概念（受改进建议影响）
-  │
-  ├─ Step 4: delegate_task → 审查喵评骨架层
-  │   └─ 审查喵: 读文章 + loop_review.py 结果 → 产出骨架分 + improvements
-  │
-  ├─ Step 5: heartbeat.py loop-state review '<json>'
-  │   └─ 存储: next_improvements 更新 + cumulative 累加
-  │
-  └─ Step 6-8: 收尾
+Step 0: heartbeat.py read
+  └─ 读到: loop_state 累计指标 + next_improvements + intent_queue 预警
 
-审查环 (06:00, 次日)
-  │
-  ├─ 读 loop_state
-  ├─ 扫描新概念
-  ├─ 趋势分析（喵味↓？新度收敛？ds streak?）
-  ├─ push-intent HIGH "喵味退化预警"
-  └─ loop-state review 存储
+Step 1-3: 写概念初稿
+
+Step 4: hats_brainstorm.py
+  └─ 产出: brainstorm_context.json (共享上下文 + 白帽数据 + 角色文件路径)
+
+Step 5-6: delegate_task 脑爆
+  └─ 每个子Agent: read_file(角色文件) → read_file(文章) → write_file(审查JSON)
+
+Step 7: 蓝喵读四喵JSON → 调和冲突 → 排序优先级
+
+Step 8: 白喵读蓝喵报告 → 修改概念
+
+Step 9: 审查喵终审 → READY_TO_PUBLISH?
+
+Step 10: heartbeat.py loop-state review → 持久化到 state.json
+  └─ loop_state.reviews[] ← 审查记录
+  └─ loop_state.next_improvements ← 改进建议
+  └─ loop_state.cumulative ← 累计指标更新
 ```
 
-## 从接力留言到接力循环
+## 核心组件
 
-| 维度 | 接力留言（旧） | 接力循环（新） |
-|------|:---:|:---:|
-| 写评关系 | 同一个 Agent 写+评 | 写作猫 ≠ 审查喵 |
-| 反馈方向 | 单向（留言往前传） | 闭环（审查回传给下一轮） |
-| 质量追踪 | 无（不知道上次写得怎么样） | 累计指标 + 趋势分析 |
-| 自适应 | 无（参数固定） | 审查建议自动注入下一次咚 |
-| 监督 | 无外部观察者 | 独立审查环持续监控 |
-| 持久化 | 接力留言是叙事文本 | 结构化 loop_state JSON |
+### 角色文件 (`src/hats/*.md`)
+七个独立 persona 文件，每个包含：身份设定、思维方式、审查视角、输出 JSON schema、口头禅、硬约束。
 
-## 文件清单
+### 聚合器 (`src/hats_brainstorm.py`)
+生成共享上下文 + 白帽数据 + 角色文件路径引用。不内嵌 prompt——角色定义在独立文件中。
 
-| 文件 | 路径 | 说明 |
-|------|------|------|
-| heartbeat.py | `heartbeat/heartbeat.py` | 喵魂核心 v1.1 — 新增 loop-state 子命令 |
-| loop_review.py | `src/loop_review.py` | 自动化审查器 v1.0 |
-| CRON.md | `LOOP_ARCHITECTURE.md` | 本文档 |
-| Cron job 写作环 | `a059c69ce4d5` | 更新：插入 delegate_task 审查块 |
-| Cron job 审查环 | `03ad7f0f10e6` | 新建：每日质量审查环 |
+### Cron Jobs
+- **写作环** `a059c69ce4d5`: 3x/日，七喵脑爆流
+- **审查环** `03ad7f0f10e6`: 每日 06:00，趋势预警
+- **喵财奴** `ae9b4ae7c5ee`: 每小时敛财（无关）
 
 ## Phase 3 路线图
 
 - [ ] Meta-Loop: 每周分析全体系健康，建议参数调整
-- [ ] 审查喵用独立 profile（萤）实现真正的模型级写评分离
-- [ ] loop_state 中的喵味趋势可视化
-- [ ] novelty_check 阈值自适应（太容易 PASS → 收紧）
-- [ ] 族预算动态化（基于概念密度而非硬编码 3）
+- [ ] 蓝喵报告可视化仪表盘
+- [ ] 族预算动态化
+- [ ] novelty_check 阈值自适应
+
+## 文件清单
+
+| 文件 | 说明 |
+|------|------|
+| `src/hats/white_hat.md` | 白帽喵 · 数据分析师 |
+| `src/hats/red_hat.md` | 红帽喵 · 情感雷达 |
+| `src/hats/black_hat.md` | 黑帽喵 · 批判之刃 |
+| `src/hats/yellow_hat.md` | 黄帽喵 · 价值探照灯 |
+| `src/hats/green_hat.md` | 绿帽喵 · 创意催化剂 |
+| `src/hats/blue_hat.md` | 蓝帽喵 · 脑爆指挥家 |
+| `src/hats/review_hat.md` | 审查喵 · 最终闸门 |
+| `src/hats_brainstorm.py` | 脑爆聚合器 |
+| `src/loop_review.py` | 自动化审查脚本 |
+| `heartbeat/heartbeat.py` | 喵魂核心 v1.1 |
+| `SIX_HATS.md` | 六色喵设计文档 |
+| `LOOP_ARCHITECTURE.md` | 本文档 |
