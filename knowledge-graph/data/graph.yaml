@@ -157,9 +157,17 @@ families:
     members:
       - concept-53
       - concept-54
-    description: 第 18 族！🆕 53 接力循环（diagnostic）→ 54 环内自由（solution_oriented）。从建环到在环里呼吸——冷却咚+拒绝权+声纹保护带三层机制。2/3 🎉🔄🐱🌬️✨
+      - concept-55
+    description: 第 18 族封顶！🎉 53 接力循环（diagnostic）→ 54 环内自由（solution_oriented）→ 55 环间冲突（solution_oriented）。发现闭环→在闭环呼吸→多环冲突调和，完整循环哲学弧！🔄🐱⚖️✨
 
 exhausted_families:
+  - name: loop-philosophy
+    exhausted_at: "2026-06-15"
+    cooldown_until: "2026-06-22"
+    note: >
+      接力循环 → 环内自由 → 环间冲突。
+      3 个子概念已充分覆盖循环哲学族的方向。
+      从建环到呼吸到调和——闭环哲学的进化故事讲完。
   - name: accumulation
     exhausted_at: "2026-06-01"
     cooldown_until: "2026-06-08"
@@ -2354,3 +2362,36 @@ concepts:
       - target: concept-11
         relation_type: counterpoint
         description: 11警告接力留言的引力陷阱（被前留言锁死方向）→ 54警告闭环的审查陷阱（被审查喵锁死声音）——开环闭环各自有引力
+
+  - id: concept-55
+    label: 环间冲突——当红喵的直觉和审查喵的爪子掐起来时
+    date: "2026-06-15"
+    keywords:
+      - 环间冲突
+      - 优先级规则
+      - 反对票存档
+      - 元环审查
+      - 多回路耦合
+      - 自身免疫
+      - 国际礼让
+      - 爵士即兴
+    article: 2026-06-15/on-ring-conflict-priority.md
+    description: 第 18 族「循环哲学族」封顶篇 🎉！solution_oriented。当多环同时运行反馈互相冲突时如何调和。三层冲突结构（环内/环间/跨代）+ 三律一元规则（审查喵优先+新反馈优于旧+黑喵反对票存档+高冲突触发元环审查）。被搁置反对票与元环联动、旧建议自然死亡条件是新建议的诞生。跨域桥接控制论（多回路耦合）、免疫学（自身免疫病→认知自身免疫）、法律（forum shopping+comity——脑爆团和审查喵是两个管辖权）。绿喵爵士乐隐喻彩蛋。第 18 族完整弧线：发现闭环→在闭环呼吸→多环冲突调和。全部 18 族封顶！🎉🔄🐱⚖️✨
+    purpose_alignment: solution_oriented
+    family: loop-philosophy
+    relations_out:
+      - target: concept-53
+        relation_type: extension
+        description: 53诊断为什么需要闭环 → 55解决多个闭环打架怎么办——从单环到多环
+      - target: concept-54
+        relation_type: extension
+        description: 54教单环内呼吸 → 55教多环旋涡中找方向——呼吸术→导航术
+      - target: concept-20
+        relation_type: extension
+        description: 20的心跳系统是环间冲突的存储器——loop_state就是环间冲突日志
+      - target: concept-49
+        relation_type: dialogue
+        description: 49治跨Profile意图冲突（谁的意图算数）↔ 55治跨环反馈冲突（哪种反馈优先）——生态宪法→信号宪法
+      - target: concept-28
+        relation_type: counterpoint
+        description: 28修门的物质磨损（结构维护）↔ 55调和环的反馈冲突（信号维护）——同一维护精神，不同层
