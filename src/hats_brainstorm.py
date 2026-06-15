@@ -130,7 +130,6 @@ def main():
             "yellow": str(hats_dir / "yellow_hat.md"),
             "green": str(hats_dir / "green_hat.md"),
             "blue": str(hats_dir / "blue_hat.md"),
-            "review": str(hats_dir / "review_hat.md"),
         },
         "instructions": "每个 delegate_task 子 Agent 应先 read_file 读取对应的 hat 角色文件，再读取文章进行审查。角色文件中包含完整的 persona 定义、审查视角和输出格式。"
     }

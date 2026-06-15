@@ -13,7 +13,6 @@
 | 💛 **黄帽喵** | `src/hats/yellow_hat.md` | 乐观与价值：最亮洞察, 解锁能力, 五年定位 |
 | 💚 **绿帽喵** | `src/hats/green_hat.md` | 创造与替代：替代入口, 意外桥接, 感官重构 |
 | 💙 **蓝帽喵** | `src/hats/blue_hat.md` | 过程与元认知：冲突调和, 优先级排序, 体系洞察 |
-| 🔍 **审查喵** | `src/hats/review_hat.md` | 最终质量闸门：发文就绪判定 |
 
 ## 脑爆流程
 
@@ -35,9 +34,6 @@
   │
   ├─ 白喵整合修改
   │   (读蓝喵报告 → 按优先级改 → 重读确认)
-  │
-  ├─ 🔍 审查喵终审 → /tmp/hat_review.json
-  │   (READY_TO_PUBLISH / NEEDS_MINOR_FIX / NEEDS_MAJOR_REWORK)
   │
   └─ heartbeat loop-state review 存储
 ```
