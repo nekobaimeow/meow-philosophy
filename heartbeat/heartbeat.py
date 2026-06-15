@@ -81,6 +81,27 @@ def cmd_read():
         watches = [f"{w['family']}(至{w['until']})" for w in paws["cooldown_watch"]]
         print(f"- **冷却监视**：{', '.join(watches)}")
 
+    # 🆕 loop_state 摘要
+    ls = data.get("loop_state", {})
+    if ls.get("enabled"):
+        cum = ls.get("cumulative", {})
+        improvements = ls.get("next_improvements", [])
+        last_review = ls.get("reviews", [None])[0] if ls.get("reviews") else None
+
+        print(f"\n### 🔄 接力循环状态 (Loop State)")
+        print(f"- **累计审查**：{cum.get('total_reviewed', 0)} 篇")
+        print(f"- **平均喵味骨架**：{cum.get('avg_meow_skeleton', '?')} / 5")
+        print(f"- **连续 descriptive**：{cum.get('consecutive_descriptive', 0)}")
+        if last_review:
+            scores = last_review.get("scores", {})
+            print(f"- **上次审查**：[{last_review.get('verdict', '?')}] "
+                  f"喵味骨架 {scores.get('meow_skeleton', '?')}/5 "
+                  f"新度 {scores.get('novelty_score', '?')}")
+        if improvements:
+            print(f"- **🔧 审查喵改进建议（本次写作前请阅读！）**：")
+            for imp in improvements:
+                print(f"  💡 {imp}")
+
 
 def cmd_write():
     """在 cron session 结束前更新状态快照。"""
