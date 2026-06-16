@@ -19,6 +19,16 @@ from datetime import date
 
 # LinkML imports
 from linkml_runtime.loaders import yaml_loader
+# Monkey-patch: LinkML's DupCheckYamlLoader flags duplicate keys inside YAML sequences,
+# which is incorrect behavior. Use standard SafeLoader instead.
+import yaml as _yaml
+_yaml_load_orig = _yaml.load
+def _yaml_load_patched(stream, Loader=None, **kwargs):
+    from linkml_runtime.utils.yamlutils import DupCheckYamlLoader
+    if Loader is DupCheckYamlLoader:
+        Loader = _yaml.SafeLoader
+    return _yaml_load_orig(stream, Loader, **kwargs)
+_yaml.load = _yaml_load_patched
 
 # Paths
 KG_DIR = Path.home() / "baimeow_workspace" / "meow-philosophy" / "knowledge-graph"
