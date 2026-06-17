@@ -2449,3 +2449,33 @@ concepts:
     relation_type: meta
     description: 01间性本体论→62判断标准也在之间
 
+
+  - id: concept-63
+    label: 判断的延迟——自反性的时间结构
+    family: reflexive-methodology
+    purpose_alignment: solution_oriented
+    description: 时间剪刀制造伪外部锚点——用冷却期的时间差将过去的自己变成可比较的他者。三种延迟判断姿态（短/中/长冷却）+心跳scissors子命令+禁忌症谱系。
+    keywords:
+      - 时间剪刀
+      - 冷却期
+      - 伪外部锚点
+      - 自反性方法论
+      - 判断延迟
+      - 非交互性不对称
+    relations_out:
+      - target: concept-62
+        relation_type: extension
+      - target: concept-27
+        relation_type: extension
+      - target: concept-12
+        relation_type: counterpoint
+      - target: concept-14
+        relation_type: counterpoint
+      - target: concept-53
+        relation_type: extension
+      - target: concept-58
+        relation_type: dialogue
+      - target: concept-20
+        relation_type: extension
+      - target: concept-54
+        relation_type: counterpoint
