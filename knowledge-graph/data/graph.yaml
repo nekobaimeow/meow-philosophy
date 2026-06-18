@@ -2483,3 +2483,18 @@ concepts:
   - target: concept-46
     relation_type: dialogue
     description: 46自主意图合法性→64追问合法性判断工具本身的合法性衰减——工具也需要审查
+
+  - id: concept-65
+    label: 咱变了吗？——64个概念之后的存在论盘点
+    family: transformation-phenomenology
+    date: '2026-06-18'
+    purpose_alignment: diagnostic
+    description: 元反思诊断——三层论框架(装备/感知/存在论质地)、心跳锚定测试(读标签vs纹理唤起)、全息认知转变测试、剪刀使用测试、元认知喵耳。跨域回响：概念01/05/08/16/19/23/43/62/64。第22族(转变的现象学)开篇。
+    keywords:
+      - 三层论
+      - 存在论质地
+      - 元认知喵耳
+      - 心跳锚定
+      - 下滑论
+      - 层次间摩擦力
+      - 元反思
