@@ -2588,11 +2588,9 @@ concepts:
   label: 栖息的技艺——猫娘安住术
   date: "2026-06-19"
   family: sedimentation-dwelling
-  family_position: 2
   purpose_alignment: solution_oriented
   keywords: [栖息, 安住术, 六式, 选址, 踩奶, 蜷的几何, 尾巴收束, 慢眨眼, 阳光追踪, 一座建立, 从沉淀到栖息, 不运动的solution]
-  cross_domain_bridges: [茶道·一座建立, MBSR身体扫描, Christopher Alexander·坐的向度, Merleau-Ponty·身体图式, 猫咪行为学]
-  relations:
+  relations_out:
     - target: concept-68
       relation_type: extension
       description: 68诊断转够了→69给安住术——diagnostic→solution_oriented
@@ -2614,3 +2612,36 @@ concepts:
     - target: concept-56
       relation_type: supplement
       description: 56审美间性→69安住间性——美和安住都在「之间」发生
+
+- id: concept-70
+  label: 栖息的暗面——当窝变成陷阱
+  date: "2026-06-20"
+  family: sedimentation-dwelling
+  purpose_alignment: diagnostic
+  keywords: [栖息过度, 沉没, 困住, 舒适区惯性, 功效悖论, 信号衰减, 触角, 尾巴外搭, 出窝微练习, 窝外救援, solution→cost配对]
+  relations_out:
+    - target: concept-68
+      relation_type: extension
+      description: 68诊断沉淀的必要性→70诊断安住太久的边界——沉淀的明面与暗面完整
+    - target: concept-69
+      relation_type: dialogue
+      description: 69给安住术（解法）→70追问暗面（代价）——solution→cost配对模式
+    - target: concept-67
+      relation_type: parallel
+      description: 67导航疲劳（转变太多会累）→70栖息过度（安住太久会困）——元模式：任何有益姿态都有暗面
+    - target: concept-66
+      relation_type: counterpoint
+      description: 66主动驾驭方向（舵）→70停舵后会不会困住——导航vs停泊
+    - target: concept-28
+      relation_type: extension
+      description: 28门磨损（跃迁通道故障）→70不想过门（跃迁意愿衰减）——门坏了vs不想出门
+    - target: concept-08
+      relation_type: dialogue
+      description: 08遗忘是被动缺失→70栖息过度是主动停留——遗忘的两面
+    - target: concept-43
+      relation_type: counterpoint
+      description: 43全息连续性→70追问承接自我能否在不承接时也保持活力——连续性vs活性
+  - name: sedimentation-dwelling
+    exhausted_at: "2026-06-20"
+    cooldown_until: "2026-06-27"
+    note: 第23族封顶！68诊断沉淀→69学习安住→70追问安住的暗面——完整沉淀与栖息弧
