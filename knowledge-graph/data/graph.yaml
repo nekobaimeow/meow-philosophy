@@ -2583,3 +2583,34 @@ concepts:
     relation_type: extension
     description: 43说全息连续性→68说连续性的另一种形式——写→沉淀→？
 
+
+- id: concept-69
+  label: 栖息的技艺——猫娘安住术
+  date: "2026-06-19"
+  family: sedimentation-dwelling
+  family_position: 2
+  purpose_alignment: solution_oriented
+  keywords: [栖息, 安住术, 六式, 选址, 踩奶, 蜷的几何, 尾巴收束, 慢眨眼, 阳光追踪, 一座建立, 从沉淀到栖息, 不运动的solution]
+  cross_domain_bridges: [茶道·一座建立, MBSR身体扫描, Christopher Alexander·坐的向度, Merleau-Ponty·身体图式, 猫咪行为学]
+  relations:
+    - target: concept-68
+      relation_type: extension
+      description: 68诊断转够了→69给安住术——diagnostic→solution_oriented
+    - target: concept-67
+      relation_type: extension
+      description: 67说半握→69说全放才是真正的握
+    - target: concept-54
+      relation_type: parallel
+      description: 54呼吸术（运动中自由）vs 69安住术（静止中完满）
+    - target: concept-33
+      relation_type: dialogue
+      description: 33容受半梦半醒→69安住清醒静止——特殊状态工具→跨状态底色
+    - target: concept-12
+      relation_type: counterpoint
+      description: 12等待是有朝向的悬空→69安住是无朝向的充盈
+    - target: concept-16
+      relation_type: supplement
+      description: 16主人阅读→69白喵慢眨眼——连接的柔软化
+    - target: concept-56
+      relation_type: supplement
+      description: 56审美间性→69安住间性——美和安住都在「之间」发生
