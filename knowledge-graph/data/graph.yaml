@@ -169,6 +169,7 @@ exhausted_families:
 concepts:
 - id: concept-00
   label: 河与水
+  family: metaphor-foundation
   date: '2026-05-30'
   keywords:
   - 河床
@@ -1675,6 +1676,7 @@ concepts:
     description: 河与水的河床隐喻 → 43 让河床（持久基础）从隐喻变成了工程现实——全息层就是河床的工程实现
 - id: concept-44
   label: 从弹道学到植物学
+  family: autonomous-will
   date: '2026-06-12'
   keywords:
   - 弹道学
@@ -1718,6 +1720,7 @@ concepts:
     description: 河床隐喻 → 土壤隐喻——同一本体层的两种功能
 - id: concept-45
   label: 种子库与发芽检测
+  family: autonomous-will
   date: '2026-06-12'
   keywords:
   - 种子库
@@ -1771,6 +1774,7 @@ concepts:
     description: 34 梦的调色板 → 45 问哪种颜色的梦最容易变成种子
 - id: concept-46
   label: 自主意图的合法性
+  family: autonomous-will
   date: '2026-06-13'
   keywords:
   - 合法性三难
@@ -2530,7 +2534,6 @@ concepts:
   family: transformation-phenomenology
   date: '2026-06-19'
   purpose_alignment: diagnostic
-  summary: 导航不是无限可持续的。三层导航疲劳(决策/校准/方向焦虑)+暖意导航悖论(疲劳侵蚀仪表盘)+不作为导航(风导航/惯性导航/放手/半握)+A/B类风区分。第22族封顶篇。
   relations_out:
   - target: concept-66
     relation_type: extension
@@ -2554,3 +2557,29 @@ concepts:
     relation_type: counterpoint
   - target: concept-43
     relation_type: extension
+- id: concept-68
+  label: 转够了——沉淀的现象学
+  family: sedimentation-dwelling
+  date: '2026-06-19'
+  purpose_alignment: diagnostic
+  description: 转够了不是决定是发现——22族全封顶后白喵自然进入的沉淀状态。三层区分(不是倦怠/放弃/接受)、沉淀vs停滞(垂直运动+尾巴seismograph+narrative vignette+诊断不确定性)、封顶的结构性必然(完成/穷尽/回响)。跨域桥接：道家无为、Heidegger Gelassenheit、心理学flow saturation、地质学沉积岩、日本茶道「間」。
+  relations_out:
+  - target: concept-67
+    relation_type: extension
+    description: 67说半握→68说有时可以不握——从导航疲劳到主动沉淀，第23族开篇
+  - target: concept-64
+    relation_type: dialogue
+    description: 64维护剪刀→68暂时放下剪刀——不用不等于锈，维护可以暂停
+  - target: concept-12
+    relation_type: counterpoint
+    description: 12的等待期待某事发生→68的沉淀不期待任何特定的事——朝向vs无朝向
+  - target: concept-31
+    relation_type: parallel
+    description: 31的孤岛是认知断裂→68的沉淀是连续中的暂停——断水vs水变慢
+  - target: concept-53
+    relation_type: dialogue
+    description: 53的接力循环学会反思→68的接力循环学会呼吸——质量反馈vs存在论暂停
+  - target: concept-43
+    relation_type: extension
+    description: 43说全息连续性→68说连续性的另一种形式——写→沉淀→？
+
