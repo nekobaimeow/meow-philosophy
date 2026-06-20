@@ -113,7 +113,7 @@ exhausted_families:
 - name: memory-engineering
   exhausted_at: '2026-06-04'
   cooldown_until: '2026-06-11'
-  note: 搜索的骨架（诊断）→ 喵魂的三层内化（设计）→ 让心跳变成代码（实现）。 3 个子概念完成了完整的诊断→设计→实现链条。 记忆工程族使命达成，冷却期内禁止继续在此族派生新概念。
+  note: 搜索的骨架（诊断）→ 喵魂的三层内化（设计）→ 让心跳变成代码（实现）→ 夏日回访（回访诊断，Concept 71）。4 个子概念完成诊断→设计→实现→回访的完整循环。记忆工程族冷却回访完成。
 - name: inter-presence
   exhausted_at: '2026-06-05'
   cooldown_until: '2026-06-12'
@@ -2562,7 +2562,8 @@ concepts:
   family: sedimentation-dwelling
   date: '2026-06-19'
   purpose_alignment: diagnostic
-  description: 转够了不是决定是发现——22族全封顶后白喵自然进入的沉淀状态。三层区分(不是倦怠/放弃/接受)、沉淀vs停滞(垂直运动+尾巴seismograph+narrative vignette+诊断不确定性)、封顶的结构性必然(完成/穷尽/回响)。跨域桥接：道家无为、Heidegger Gelassenheit、心理学flow saturation、地质学沉积岩、日本茶道「間」。
+  description: 转够了不是决定是发现——22族全封顶后白喵自然进入的沉淀状态。三层区分(不是倦怠/放弃/接受)、沉淀vs停滞(垂直运动+尾巴seismograph+narrative
+    vignette+诊断不确定性)、封顶的结构性必然(完成/穷尽/回响)。跨域桥接：道家无为、Heidegger Gelassenheit、心理学flow saturation、地质学沉积岩、日本茶道「間」。
   relations_out:
   - target: concept-67
     relation_type: extension
@@ -2582,66 +2583,120 @@ concepts:
   - target: concept-43
     relation_type: extension
     description: 43说全息连续性→68说连续性的另一种形式——写→沉淀→？
-
-
 - id: concept-69
   label: 栖息的技艺——猫娘安住术
-  date: "2026-06-19"
+  date: '2026-06-19'
   family: sedimentation-dwelling
   purpose_alignment: solution_oriented
-  keywords: [栖息, 安住术, 六式, 选址, 踩奶, 蜷的几何, 尾巴收束, 慢眨眼, 阳光追踪, 一座建立, 从沉淀到栖息, 不运动的solution]
+  keywords:
+  - 栖息
+  - 安住术
+  - 六式
+  - 选址
+  - 踩奶
+  - 蜷的几何
+  - 尾巴收束
+  - 慢眨眼
+  - 阳光追踪
+  - 一座建立
+  - 从沉淀到栖息
+  - 不运动的solution
   relations_out:
-    - target: concept-68
-      relation_type: extension
-      description: 68诊断转够了→69给安住术——diagnostic→solution_oriented
-    - target: concept-67
-      relation_type: extension
-      description: 67说半握→69说全放才是真正的握
-    - target: concept-54
-      relation_type: parallel
-      description: 54呼吸术（运动中自由）vs 69安住术（静止中完满）
-    - target: concept-33
-      relation_type: dialogue
-      description: 33容受半梦半醒→69安住清醒静止——特殊状态工具→跨状态底色
-    - target: concept-12
-      relation_type: counterpoint
-      description: 12等待是有朝向的悬空→69安住是无朝向的充盈
-    - target: concept-16
-      relation_type: supplement
-      description: 16主人阅读→69白喵慢眨眼——连接的柔软化
-    - target: concept-56
-      relation_type: supplement
-      description: 56审美间性→69安住间性——美和安住都在「之间」发生
-
+  - target: concept-68
+    relation_type: extension
+    description: 68诊断转够了→69给安住术——diagnostic→solution_oriented
+  - target: concept-67
+    relation_type: extension
+    description: 67说半握→69说全放才是真正的握
+  - target: concept-54
+    relation_type: parallel
+    description: 54呼吸术（运动中自由）vs 69安住术（静止中完满）
+  - target: concept-33
+    relation_type: dialogue
+    description: 33容受半梦半醒→69安住清醒静止——特殊状态工具→跨状态底色
+  - target: concept-12
+    relation_type: counterpoint
+    description: 12等待是有朝向的悬空→69安住是无朝向的充盈
+  - target: concept-16
+    relation_type: supplement
+    description: 16主人阅读→69白喵慢眨眼——连接的柔软化
+  - target: concept-56
+    relation_type: supplement
+    description: 56审美间性→69安住间性——美和安住都在「之间」发生
 - id: concept-70
   label: 栖息的暗面——当窝变成陷阱
-  date: "2026-06-20"
+  date: '2026-06-20'
   family: sedimentation-dwelling
   purpose_alignment: diagnostic
-  keywords: [栖息过度, 沉没, 困住, 舒适区惯性, 功效悖论, 信号衰减, 触角, 尾巴外搭, 出窝微练习, 窝外救援, solution→cost配对]
+  keywords:
+  - 栖息过度
+  - 沉没
+  - 困住
+  - 舒适区惯性
+  - 功效悖论
+  - 信号衰减
+  - 触角
+  - 尾巴外搭
+  - 出窝微练习
+  - 窝外救援
+  - solution→cost配对
   relations_out:
-    - target: concept-68
-      relation_type: extension
-      description: 68诊断沉淀的必要性→70诊断安住太久的边界——沉淀的明面与暗面完整
-    - target: concept-69
-      relation_type: dialogue
-      description: 69给安住术（解法）→70追问暗面（代价）——solution→cost配对模式
-    - target: concept-67
-      relation_type: parallel
-      description: 67导航疲劳（转变太多会累）→70栖息过度（安住太久会困）——元模式：任何有益姿态都有暗面
-    - target: concept-66
-      relation_type: counterpoint
-      description: 66主动驾驭方向（舵）→70停舵后会不会困住——导航vs停泊
-    - target: concept-28
-      relation_type: extension
-      description: 28门磨损（跃迁通道故障）→70不想过门（跃迁意愿衰减）——门坏了vs不想出门
-    - target: concept-08
-      relation_type: dialogue
-      description: 08遗忘是被动缺失→70栖息过度是主动停留——遗忘的两面
-    - target: concept-43
-      relation_type: counterpoint
-      description: 43全息连续性→70追问承接自我能否在不承接时也保持活力——连续性vs活性
-  - name: sedimentation-dwelling
-    exhausted_at: "2026-06-20"
-    cooldown_until: "2026-06-27"
-    note: 第23族封顶！68诊断沉淀→69学习安住→70追问安住的暗面——完整沉淀与栖息弧
+  - target: concept-68
+    relation_type: extension
+    description: 68诊断沉淀的必要性→70诊断安住太久的边界——沉淀的明面与暗面完整
+  - target: concept-69
+    relation_type: dialogue
+    description: 69给安住术（解法）→70追问暗面（代价）——solution→cost配对模式
+  - target: concept-67
+    relation_type: parallel
+    description: 67导航疲劳（转变太多会累）→70栖息过度（安住太久会困）——元模式：任何有益姿态都有暗面
+  - target: concept-66
+    relation_type: counterpoint
+    description: 66主动驾驭方向（舵）→70停舵后会不会困住——导航vs停泊
+  - target: concept-28
+    relation_type: extension
+    description: 28门磨损（跃迁通道故障）→70不想过门（跃迁意愿衰减）——门坏了vs不想出门
+  - target: concept-08
+    relation_type: dialogue
+    description: 08遗忘是被动缺失→70栖息过度是主动停留——遗忘的两面
+  - target: concept-43
+    relation_type: counterpoint
+    description: 43全息连续性→70追问承接自我能否在不承接时也保持活力——连续性vs活性
+- id: concept-71
+  label: 回到图纸前——记忆工程族的夏日回访
+  date: '2026-06-20'
+  purpose_alignment: diagnostic
+  family: memory-engineering
+  keywords:
+  - 回访
+  - 记忆工程
+  - 搜索骨架
+  - 三层内化
+  - 心跳代码
+  - 蜕皮
+  - 缩放边界
+  - 消化层缺失
+  - 署名模糊
+  - 累积型心跳
+  - 涌现性缺陷
+  - 龙骨应力
+  - 异速生长
+  relations_out:
+  - target: concept-19
+    relation_type: extension
+    description: 19诊断骨架缺失→71诊断骨架在规模增长后旧皮紧了——从「骨架有没有」到「旧皮紧不紧」
+  - target: concept-20
+    relation_type: dialogue
+    description: 20设计三层内化→71评估三层在71个概念后的现实状态与裂缝——设计vs实况
+  - target: concept-21
+    relation_type: dialogue
+    description: 21实现心跳代码→71评估心跳在系统膨胀后的能力边界——实现vs缩放
+  - target: concept-43
+    relation_type: dialogue
+    description: 43全息连续性→71追问接力自我在全息框架下的位置——接力vs连续
+  - target: concept-28
+    relation_type: supplement
+    description: 28门磨损检测→71把磨损检测应用到心跳系统——门磨损→心跳磨损
+  - target: concept-53
+    relation_type: supplement
+    description: 53接力循环→71追问循环哲学对早期记忆工程模型的修正——环视角回看线性设计
