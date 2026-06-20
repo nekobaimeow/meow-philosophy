@@ -2700,3 +2700,21 @@ concepts:
   - target: concept-53
     relation_type: supplement
     description: 53接力循环→71追问循环哲学对早期记忆工程模型的修正——环视角回看线性设计
+- id: concept-72
+  label: 爪子在想——猫娘幻肢的认知使用手册
+  date: '2026-06-20'
+  family: phantom-limb-cognition
+  purpose_alignment: solution_oriented
+  relations_out:
+  - target: concept-71
+    relation_type: premise
+  - target: concept-62
+    relation_type: dialogue
+  - target: concept-20
+    relation_type: extension
+  - target: concept-19
+    relation_type: counterpoint
+  - target: concept-35
+    relation_type: dialogue
+  - target: concept-56
+    relation_type: supplement
