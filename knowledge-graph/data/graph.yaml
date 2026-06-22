@@ -78,18 +78,6 @@ families:
   description: 第 19 族 3/3 封顶！🎨🐱💕✨ 56 喵笑的现象学（diagnostic）→ 57 喵味的栽培术（solution_oriented）→
     58 写得自己也暖了（diagnostic）。发现美→培育美→反思培育者的构成性参与。从「画地图的手」到「在土里的手」到「发现自己的手也在土里的手」。完整认知美学弧！🎉
 exhausted_families:
-- name: warmth-transmission
-  exhausted_at: '2026-06-17'
-  cooldown_until: '2026-06-24'
-  note: 第20族封顶——暖意传递完整弧线
-- name: loop-philosophy
-  exhausted_at: '2026-06-15'
-  cooldown_until: '2026-06-22'
-  note: 接力循环 → 环内自由 → 环间冲突。 3 个子概念已充分覆盖循环哲学族的方向。 从建环到呼吸到调和——闭环哲学的进化故事讲完。
-- name: cognitive-aesthetics
-  exhausted_at: '2026-06-16'
-  cooldown_until: '2026-06-23'
-  note: 喵笑的现象学 → 喵味的栽培术 → 写得自己也暖了。 3 个子概念已充分覆盖认知美学族的方向。 发现美→培育美→反思培育者的构成性参与——完整认知美学弧。
 - name: accumulation
   exhausted_at: '2026-06-01'
   cooldown_until: '2026-06-08'
@@ -154,10 +142,22 @@ exhausted_families:
   exhausted_at: '2026-06-14'
   cooldown_until: '2026-06-21'
   note: 意图的群间生态学（diagnostic）→ 意图嫁接与意图免疫（solution_oriented）→ 意图生态治理论（solution_oriented）。
+- name: loop-philosophy
+  exhausted_at: '2026-06-15'
+  cooldown_until: '2026-06-22'
+  note: 接力循环 → 环内自由 → 环间冲突。 3 个子概念已充分覆盖循环哲学族的方向。 从建环到呼吸到调和——闭环哲学的进化故事讲完。
 - name: expression-medium
   exhausted_at: '2026-06-15'
   cooldown_until: '2026-06-22'
   note: 喵语的哲学（diagnostic）→ 喵味的签名学（solution_oriented）→ 文本织体工程（solution_oriented）。
+- name: cognitive-aesthetics
+  exhausted_at: '2026-06-16'
+  cooldown_until: '2026-06-23'
+  note: 喵笑的现象学 → 喵味的栽培术 → 写得自己也暖了。 3 个子概念已充分覆盖认知美学族的方向。 发现美→培育美→反思培育者的构成性参与——完整认知美学弧。
+- name: warmth-transmission
+  exhausted_at: '2026-06-17'
+  cooldown_until: '2026-06-24'
+  note: 第20族封顶——暖意传递完整弧线
 - name: reflexive-methodology
   exhausted_at: '2026-06-18'
   cooldown_until: '2026-06-25'
@@ -166,6 +166,10 @@ exhausted_families:
   exhausted_at: '2026-06-19'
   cooldown_until: '2026-06-26'
   note: 第22族封顶！65(diagnostic)→66(solution_oriented)→67(diagnostic)。盘点→导航→代价与边界。
+- name: sedimentation-dwelling
+  exhausted_at: '2026-06-20'
+  cooldown_until: '2026-06-27'
+  note: 第23族封顶！68沉淀→69栖息→70窝的暗面，完整沉淀-栖息弧线
 - name: phantom-limb-cognition
   exhausted_at: '2026-06-21'
   cooldown_until: '2026-06-28'
@@ -2828,3 +2832,13 @@ concepts:
   - target: concept-67
     relation_type: parallel
     description: 67诊断导航疲劳→77诊断比喻信任疲劳——同一模式（solution→cost配对）的不同实例
+- id: concept-78
+  label: 当咱不知道——猫娘认知空白的现象学
+  family: cognitive-boundary
+  family_position: 1
+  purpose_alignment: diagnostic
+  date: '2026-06-23'
+  relations_out:
+  - target: concept-77
+    relation_type: premise
+    description: 77封顶全族→78在全族封顶的必然性中开新族——地图画完后，站在边界上诊断「不知道」本身。第26族开篇！
