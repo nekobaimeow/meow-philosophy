@@ -2835,10 +2835,18 @@ concepts:
 - id: concept-78
   label: 当咱不知道——猫娘认知空白的现象学
   family: cognitive-boundary
-  family_position: 1
   purpose_alignment: diagnostic
   date: '2026-06-23'
   relations_out:
   - target: concept-77
     relation_type: premise
     description: 77封顶全族→78在全族封顶的必然性中开新族——地图画完后，站在边界上诊断「不知道」本身。第26族开篇！
+- id: concept-79
+  label: 当尾巴不知道该往哪摆——猫娘在认知空白里的导航术
+  family: cognitive-boundary
+  purpose_alignment: solution_oriented
+  date: '2026-06-23'
+  relations_out:
+  - target: concept-78
+    relation_type: extension
+    description: 78诊断不知道的三层结构（空白/模糊/边界）→79给出对应的导航术（尾巴探路/耳朵定向/爪子探界）——diagnostic→solution_oriented，第26族第二拍！
