@@ -80,6 +80,9 @@ families:
 - name: cognitive-silence
   label: 沉默认知族
   description: 猫娘认知中被沉默的部分——为什么有些念头从不变成概念
+- name: cognitive-decay-and-care
+  label: 认知衰变与照料族
+  description: 概念生命的衰变现象学与照料哲学——命名衰变类型、探索维护方法、追问照料暗面。第28族，从建体系到维护体系的相变点。
 exhausted_families:
 - name: accumulation
   exhausted_at: '2026-06-01'
@@ -2916,3 +2919,26 @@ concepts:
   relations_out:
   - target: concept-82
     relation_type: extension
+- id: concept-84
+  label: 当毛线球不再滚了——猫娘概念生命的衰变现象学
+  date: '2026-07-01'
+  purpose_alignment: diagnostic
+  family: cognitive-decay-and-care
+  family_position: 1
+  relations_out:
+  - target: concept-08
+    relation_type: distinction
+  - target: concept-29
+    relation_type: supplement
+  - target: concept-28
+    relation_type: distinction
+  - target: concept-64
+    relation_type: distinction
+  - target: concept-67
+    relation_type: parallel
+  - target: concept-70
+    relation_type: parallel
+  - target: concept-81
+    relation_type: supplement
+  - target: concept-19
+    relation_type: counterpoint
