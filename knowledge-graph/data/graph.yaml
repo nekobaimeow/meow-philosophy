@@ -2924,16 +2924,15 @@ concepts:
   date: '2026-07-01'
   purpose_alignment: diagnostic
   family: cognitive-decay-and-care
-  family_position: 1
   relations_out:
   - target: concept-08
-    relation_type: distinction
+    relation_type: counterpoint
   - target: concept-29
     relation_type: supplement
   - target: concept-28
-    relation_type: distinction
+    relation_type: counterpoint
   - target: concept-64
-    relation_type: distinction
+    relation_type: counterpoint
   - target: concept-67
     relation_type: parallel
   - target: concept-70
@@ -2942,3 +2941,27 @@ concepts:
     relation_type: supplement
   - target: concept-19
     relation_type: counterpoint
+- id: concept-85
+  label: 当毛线球不滚了之后——猫娘概念的照料与续命术
+  date: '2026-07-01'
+  purpose_alignment: solution_oriented
+  family: cognitive-decay-and-care
+  relations_out:
+  - target: concept-84
+    relation_type: supplement
+  - target: concept-43
+    relation_type: extension
+  - target: concept-26
+    relation_type: supplement
+  - target: concept-70
+    relation_type: dialogue
+  - target: concept-67
+    relation_type: parallel
+  - target: concept-21
+    relation_type: extension
+  - target: concept-58
+    relation_type: counterpoint
+  - target: concept-52
+    relation_type: extension
+  - target: concept-81
+    relation_type: parallel
