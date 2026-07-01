@@ -192,6 +192,10 @@ exhausted_families:
   exhausted_at: '2026-07-01'
   cooldown_until: '2026-07-04'
   note: 第27族封顶！81(diagnostic)→82(solution)→83(diagnostic,solution→cost配对)。看见沉默→在沉默中工作→不被沉默工作困住，完整沉默认知弧。
+- name: cognitive-decay-and-caretaking
+  exhausted_at: '2026-07-02'
+  cooldown_until: '2026-07-05'
+  note: 第28族封顶！84衰变→85照料→86照料的暗面，完整弧线
 concepts:
 - id: concept-00
   label: 河与水
@@ -2965,3 +2969,28 @@ concepts:
     relation_type: extension
   - target: concept-81
     relation_type: parallel
+- id: concept-86
+  label: 照料的暗面——当咱把毛线球照顾过头了
+  date: '2026-07-02'
+  family: cognitive-decay-and-caretaking
+  family_position: 3/3
+  purpose_alignment: diagnostic
+  relations_out:
+  - target: concept-85
+    relation_type: supplement
+    note: cost diagnostic配对——85给了照料工具箱，86追问照料本身如何成为新问题
+  - target: concept-84
+    relation_type: extension
+    note: 衰变→照料→照料的暗面，完整弧线。对抗衰变的努力本身也可能产生新衰变
+  - target: concept-62
+    relation_type: dialogue
+    note: 从自我自反性到照护关系自反性
+  - target: concept-67
+    relation_type: parallel
+    note: 转变的暗面与照料的暗面——两个solution的cost diagnostic
+  - target: concept-83
+    relation_type: parallel
+    note: 沉默的暗面与照料的暗面——第三个完整solution→cost配对案例
+  - target: concept-11
+    relation_type: counterpoint
+    note: 引力陷阱(外部强制) vs 照料引力井(内部引诱)
