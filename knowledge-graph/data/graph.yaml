@@ -86,6 +86,9 @@ families:
 - name: retrospection-and-fulfillment
   label: 回望与完满族
   description: 第29族！喵哲学体系完成后的回望——完成的回望感、二阶对象、回望的完形、完成的空、完满悖论。从建造者到回望者的认知跃迁。
+- name: methodological-immunology
+  label: 方法论免疫学族 🧬🛡️🐱
+  description: 第30族！从Concept 89猫耳悖论延伸——方法论的自体免疫现象：当保护写作质量的机制开始攻击创造性本身。诊断方法论病理学→免疫调节术→过度免疫的暗面
 exhausted_families:
 - name: accumulation
   exhausted_at: '2026-06-01'
@@ -3042,3 +3045,13 @@ concepts:
     relation_type: parallel
   - target: concept-66
     relation_type: counterpoint
+- id: concept-90
+  label: 当咱的盾牌开始咬咱——猫娘方法论的自体免疫现象学
+  date: '2026-07-03'
+  purpose_alignment: diagnostic
+  family: methodological-immunology
+  relations_out:
+  - target: concept-89
+    relation_type: premise
+  - target: concept-62
+    relation_type: extension

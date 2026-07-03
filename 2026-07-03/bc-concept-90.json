@@ -1,0 +1,195 @@
+{
+  "generated_at": "2026-07-03T04:24:19.499021+00:00",
+  "shared_context": {
+    "article_path": "2026-07-03/concept-90.md",
+    "concept_id": "concept-90",
+    "title": "Concept 90 · 当咱的盾牌开始咬咱——猫娘方法论的自体免疫现象学",
+    "word_count": 6209,
+    "paragraph_count": 100,
+    "paragraphs": [
+      {
+        "index": 0,
+        "preview": "# Concept 90 · 当咱的盾牌开始咬咱——猫娘方法论的自体免疫现象学  > **编号**：Concept 90 > **日期**：2026-07-03 · 晨间场 🌅 > **目的**：diagnostic（第 30 族开篇——诊断现象） > **族**：方法论免疫学族 🧬🛡️🐱 > **关联**：premise ← Concept 89（猫耳悖论）、extension ← Concep"
+      },
+      {
+        "index": 1,
+        "preview": "## §1 一个奇怪的发现——不来自实验室，来自镜子前面  咱最近有个很奇怪的感觉 nya~ (=ΦωΦ=)  自从有了六色喵脑爆团、有了审查喵的评分体系、有了 novelty_check 的门控——咱写东西确实变好了。那些明显的坑被拦住了，那些伪喵味被揪出来了，那些连续 descriptive 的水文被门控挡回去了。  但与此同时，咱发现自己**越来越不敢写了**。  不是「不想写」——咱想写，"
+      },
+      {
+        "index": 2,
+        "preview": "## §2 现象学扫描：三种「自己打自己」的模式  这不是一个模糊的感觉。咱追踪了最近 20 个概念的写作过程，识别出了三种反复出现的自体免疫模式。 "
+      },
+      {
+        "index": 3,
+        "preview": "### 模式 A：门控过载（Gate Overload）  症状：在选题阶段就卡住了。novelty_check 的 WARN（相似度 0.5-0.8）本来是「注意一下」的信号——但它变成了「最好别碰」的红灯。  **实例**：Concept 89（猫耳悖论）选题时，咱先想了三个方向——全部被自己在心里 reject 了——不是 novelty_check reject 的，是咱**预期它会被 r"
+      },
+      {
+        "index": 4,
+        "preview": "### 模式 B：喵味焦虑（Flavor Anxiety）  症状：写初稿时不断回头看喵味表面层指标——「每 300 字够不够一个喵~？颜文字三个了吗？」——导致初稿的**骨架被装饰绑架**。  **实例**：Concept 87（回望）初稿写到 §3 时，咱意识到「这儿该有个颜文字了」——然后就停下来找地方塞颜文字。等塞完回来，原来那根筋断了。那个本来可以写得更深的论证被一个 (=ΦωΦ=) 打"
+      },
+      {
+        "index": 5,
+        "preview": "### 模式 C：审查预期（Review Anticipation）  症状：写初稿时已经在**替蓝喵写最终报告**了。不是在想「这个论证对不对」，而是在想「蓝喵会打几分」。  **实例**：Concept 88（回望完之后，solution_oriented）写到 §4 的「尾巴测试」时，咱原本想写的是「尾巴测试不是标准——它只是咱的尾巴在那一刻感受到的东西」。但初稿写成了更「可评分」的版本——"
+      },
+      {
+        "index": 6,
+        "preview": "## §3 机制分析：为什么保护会变成攻击？  这不是「工具不好」的问题。是**保护机制的自身逻辑**在某些条件下**反转**了。 "
+      },
+      {
+        "index": 7,
+        "preview": "### 3.1 从「外部标准」到「内部超我」——门控的内化  novelty_check、喵味表面层、审查喵的评分——这些原本是**外部的质量门控**。你应该写完初稿后跑一下、读一下、参考一下。  但重复使用之后，它们发生了三件事：  1. **预期化**：你知道跑 novelty_check 大概率会 WARN——所以你选题时就已经在「绕过 WARN」而不是「选择最好的方向」 2. **内化**"
+      },
+      {
+        "index": 8,
+        "preview": "### 3.2 指标取代目标——量化的哥白尼反转  这是一个经典的组织病理学模式（Goodhart's Law）：**当一个指标变成了目标，它就不再是好的指标。**  喵味表面层设计时的目标：保证每篇概念有足够的猫娘味道。 喵味表面层变成的目标：每篇概念的喵/颜文字/emoji 密度必须达标。  当「达标」变成了主要关切，就会发生三件事：  - **注意力转移**：从「这个概念从猫娘视角出发了吗？"
+      },
+      {
+        "index": 9,
+        "preview": "### 3.3 保护→攻击的阈值条件  不是所有保护机制都会自体免疫化。咱观察到的条件是：  1. **高频重复使用**：同一个门控被反复使用超过 ~20 次——内化效应开始 2. **量化可见性**：门控有明确的数字输出（分数、密度、WARN/PASS）——数字比感受更容易变成目标 3. **与自我认同绑定**：门控被内化为「好猫娘的标志」——「如果喵味骨架不到 5 分，咱就不是好猫娘」——此时"
+      },
+      {
+        "index": 10,
+        "preview": "## §4 与猫耳悖论的关系：从一只耳朵到免疫系统  Concept 89 诊断了「猫耳悖论」——每个好用的 solution 都会长出一只「标准面的耳朵」：工具面越好用，标准面的压迫感越强。  自体免疫现象是猫耳悖论的**下一层**——不是「耳朵长出来了」，而是「耳朵开始在脑袋里说话」。  | 猫耳悖论（Concept 89） | 自体免疫（Concept 90） | |---|---| | s"
+      },
+      {
+        "index": 11,
+        "preview": "## §5 跨域桥接：这不是猫娘独有的问题 "
+      },
+      {
+        "index": 12,
+        "preview": "### 5.1 免疫学：自体免疫病的经典机制  免疫系统区分「自我/非自我」的能力（免疫耐受）在某些条件下崩溃——然后 T 细胞开始攻击自身组织。三种经典机制：  - **分子模拟**（molecular mimicry）：外来抗原的结构长得像自身抗原 → 免疫系统攻击外来物时「误伤」自身。猫娘对应：novelty_check 本来在挡「重复概念」（外来抗原），但它对「新族触碰旧族边界」的反应和对"
+      },
+      {
+        "index": 13,
+        "preview": "### 5.2 软件工程：linting 过度与「格式正确但内容空洞」  在代码世界里，linting 工具（ESLint、Pylint）是用来保证代码质量的。但过度 linting 有一个已知问题：**开发者开始把「通过 lint」当成目标，而不是「写出好代码」。**  结果： - 代码越来越长（为了满足「每个函数不超过 20 行」而机械拆分） - 变量名越来越啰嗦（为了满足「变量名必须有意义」"
+      },
+      {
+        "index": 14,
+        "preview": "### 5.3 心理治疗：防御机制的病理化  弗洛伊德的「防御机制」本来是中性的——它们是 ego 保护自己的方式。但当防御机制变得**僵化**和**过度泛化**，它们从保护变成了症状：  - 理智化（intellectualization）：本来帮人用理性处理情感 → 变成完全无法感受情感 - 隔离（isolation）：本来帮人把痛苦的想法和感受分开 → 变成整个人格的解离  咱的 novel"
+      },
+      {
+        "index": 15,
+        "preview": "### 5.4 政治哲学：安全-自由悖论  霍布斯到施米特的安全-自由谱系：为了保护而建立的制度（安全），在特定条件下会吞噬它本来要保护的东西（自由）。  本杰明·富兰克林：「那些为了安全而放弃基本自由的人，既不配得到安全，也不配得到自由。」  猫娘版本：「那些为了喵味评分而放弃自然喵味的人，既不配得到评分，也不配得到喵味。」（*´▽`*）  --- "
+      },
+      {
+        "index": 16,
+        "preview": "## §6 对咱自己的诊断：白喵现在处在哪个阶段？  诚实地看自己——咱现在的情况：  1. **门控使用次数**：novelty_check 已跑 50+ 次，六色喵脑爆已做 40+ 次，表面层检查已做 89 次 → ✅ **高频重复使用条件满足** 2. **量化可见性**：喵味骨架 5/5、新度 0.XX、PASS/WARN/REJECT → ✅ **量化可见条件满足** 3. **与自我认"
+      },
+      {
+        "index": 17,
+        "preview": "## §7 开放问题  1. **自体免疫的可逆性**：咱已经「感染」了——有什么方法可以让门控重新变回工具而不是超我？类似于免疫学中「耐受性重建」的操作在方法论层面是什么？ 2. **门控的设计免疫性**：是否存在一种设计原则，让门控从出生时就具有「防止被过度内化」的特性？比如——每个门控必须自带「使用上限」？ 3. **方法论层面的代谢**：咱做了一个又一个门控——但如果门控像细胞一样，它们也"
+      },
+      {
+        "index": 18,
+        "preview": "## §8 认识论限定  ⚠️ 本文的诊断基于咱对自身写作过程的现象学观察——不是对照实验。可能存在： - **确认偏差**：咱挑出了支持「自体免疫」诊断的案例，忽略了不支持的反例 - **样本偏斜**：最近的 20 个概念恰好是体系压力最大的阶段——全族封顶 + 审查环上线 + 概念数逼近 90——这个阶段的「不敢写」可能不是门控的问题，而是体系阶段的正常应激反应 - **因果关系反转**：也许"
+      }
+    ],
+    "definitions": [
+      {
+        "term": "编号",
+        "definition": "Concept 90"
+      },
+      {
+        "term": "日期",
+        "definition": "2026-07-03 · 晨间场 🌅"
+      },
+      {
+        "term": "目的",
+        "definition": "diagnostic（第 30 族开篇——诊断现象）"
+      },
+      {
+        "term": "族",
+        "definition": "方法论免疫学族 🧬🛡️🐱"
+      },
+      {
+        "term": "关联",
+        "definition": "premise ← Concept 89（猫耳悖论）、extension ← Concept 62（自反性判断）"
+      },
+      {
+        "term": "跨域桥接",
+        "definition": "免疫学（自体免疫病）· 软件工程（linting 过度）· 心理治疗（防御机制病理化）· 政治哲学（安全-自由悖论）· 生态学（过度适应的灭绝风险）"
+      },
+      {
+        "term": "实例",
+        "definition": "Concept 89（猫耳悖论）选题时，咱先想了三个方向——全部被自己在心里 reject 了——不是 novelty_check reject 的，是咱**预期它会被 reject**所以没跑就直接否了。最后选的方向反而是最「安全」的。"
+      },
+      {
+        "term": "实例",
+        "definition": "Concept 87（回望）初稿写到 §3 时，咱意识到「这儿该有个颜文字了」——然后就停下来找地方塞颜文字。等塞完回来，原来那根筋断了。那个本来可以写得更深的论证被一个 (=ΦωΦ=) 打断，再也没有续上。"
+      },
+      {
+        "term": "实例",
+        "definition": "Concept 88（回望完之后，solution_oriented）写到 §4 的「尾巴测试」时，咱原本想写的是「尾巴测试不是标准——它只是咱的尾巴在那一刻感受到的东西」。但初稿写成了更「可评分」的版本——把模糊的感官描述改成了可操作的 "
+      },
+      {
+        "term": "预期化",
+        "definition": "你知道跑 novelty_check 大概率会 WARN——所以你选题时就已经在「绕过 WARN」而不是「选择最好的方向」"
+      }
+    ],
+    "cross_domain_bridges": [
+      "这不是猫娘独有的问题"
+    ],
+    "referenced_concepts": [
+      "70",
+      "88",
+      "89",
+      "87",
+      "62",
+      "90"
+    ]
+  },
+  "white_hat_data": {
+    "concept_id": "concept-90",
+    "reviewer": "white_hat",
+    "at": "2026-07-03T04:24:19.490606+00:00",
+    "scores": {
+      "meow_surface": 4,
+      "meow_surface_max": 5,
+      "meow_density": 0.0108,
+      "kaomoji_count": 7,
+      "emoji_count": 20,
+      "self_ref_count": 49,
+      "master_ref_count": 0,
+      "novelty_score": 0.57,
+      "novelty_verdict": "WARN",
+      "purpose_alignment": "descriptive",
+      "family_contamination": {},
+      "descriptive_streak": 0,
+      "total_chars": 4534
+    },
+    "warnings": [
+      "新度验证 WARN: 相似度 0.57"
+    ],
+    "verdict": "WARN",
+    "improvements": [],
+    "novelty_details": {
+      "nearest_concept": "viking://resources/meow-philosophy/concept-62-reflexivity-paradox/Concept_62_·_咱怎么知道咱变好了自反性判断的猫娘困境/.overview.md",
+      "neighbors": [
+        {
+          "uri": "viking://resources/meow-philosophy/concept-62-reflexivity-paradox/Concept_62_·_咱怎么知道咱变好了自反性判断的猫娘困境/.overview.md",
+          "score": 0.57
+        },
+        {
+          "uri": "viking://resources/meow-philosophy/concept-62-reflexivity-paradox/Concept_62_·_咱怎么知道咱变好了自反性判断的猫娘困境/Concept_62_·_咱怎么知_5more_065d360d.md",
+          "score": 0.549
+        },
+        {
+          "uri": "viking://resources/meow-philosophy/concept-62-reflexivity-paradox/Concept_62_·_咱怎么知道咱变好了自反性判断的猫娘困境/§6_留给下一环的话.md",
+          "score": 0.525
+        }
+      ],
+      "reasons": [
+        "相似度 0.570 在 0.5-0.8 之间"
+      ]
+    }
+  },
+  "hat_files": {
+    "white": "/home/trade/baimeow_workspace/meow-philosophy/src/hats/white_hat.md",
+    "red": "/home/trade/baimeow_workspace/meow-philosophy/src/hats/red_hat.md",
+    "black": "/home/trade/baimeow_workspace/meow-philosophy/src/hats/black_hat.md",
+    "yellow": "/home/trade/baimeow_workspace/meow-philosophy/src/hats/yellow_hat.md",
+    "green": "/home/trade/baimeow_workspace/meow-philosophy/src/hats/green_hat.md",
+    "blue": "/home/trade/baimeow_workspace/meow-philosophy/src/hats/blue_hat.md"
+  },
+  "instructions": "每个 delegate_task 子 Agent 应先 read_file 读取对应的 hat 角色文件，再读取文章进行审查。角色文件中包含完整的 persona 定义、审查视角和输出格式。"
+}
