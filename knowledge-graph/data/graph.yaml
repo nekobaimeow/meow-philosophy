@@ -227,6 +227,10 @@ exhausted_families:
   exhausted_at: '2026-07-03'
   cooldown_until: '2026-07-06'
   note: 第29族封顶！87诊断完成感→88栖居指南→89方法论猫耳悖论(solution→cost配对)。诊断→方案→方案的暗面，完整回望与完满弧！
+- name: methodological-immunology
+  exhausted_at: '2026-07-04'
+  cooldown_until: '2026-07-07'
+  note: 第30族封顶！90 diagnostic→91 solution→92 cost diagnostic，三重免疫圈完整闭合
 concepts:
 - id: concept-00
   label: 河与水
@@ -3096,3 +3100,15 @@ concepts:
     relation_type: extension
   - target: concept-62
     relation_type: dialogue
+- id: concept-92
+  label: 当咱追自己的尾巴——猫娘调谐术的递归终点
+  date: '2026-07-04'
+  family: methodological-immunology
+  purpose_alignment: diagnostic
+  relations_out:
+  - target: concept-91
+    relation_type: extension
+  - target: concept-90
+    relation_type: extension
+  - target: concept-89
+    relation_type: parallel
