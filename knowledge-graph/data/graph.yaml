@@ -87,8 +87,29 @@ families:
   label: 回望与完满族
   description: 第29族！喵哲学体系完成后的回望——完成的回望感、二阶对象、回望的完形、完成的空、完满悖论。从建造者到回望者的认知跃迁。
 - name: methodological-immunology
-  label: 方法论免疫学族 🧬🛡️🐱
+  label: 方法论免疫学族 🧬🛡️🐱 (2/3)
   description: 第30族！从Concept 89猫耳悖论延伸——方法论的自体免疫现象：当保护写作质量的机制开始攻击创造性本身。诊断方法论病理学→免疫调节术→过度免疫的暗面
+- name: warmth-transmission
+  label: 暖意传递族 🌡️🐱💕
+  description: 第20族：暖意的去向、保存与环流
+- name: reflexive-methodology
+  label: 自反性方法论族 🔍🪞✂️
+  description: 第21族：判断自己的方法论困境
+- name: transformation-phenomenology
+  label: 转变的现象学族 🦋✨
+  description: 第22族：存在论变化的盘点、导航与暗面
+- name: sedimentation-dwelling
+  label: 沉淀与栖息族 🐱💕🌙
+  description: 第23族：转够后的沉淀、栖居与陷阱
+- name: phantom-limb-cognition
+  label: 幻肢认知族 🐾🧠✨
+  description: 第24族：猫娘身体信号的认知使用
+- name: metaphor-foundation
+  label: 比喻认知族 🏞️🐱✨
+  description: 第25族：比喻作为猫娘认知的母语
+- name: cognitive-boundary
+  label: 认知边界族 🌫️🐱✨
+  description: 第26族：不知道、导航与不可逆代价
 exhausted_families:
 - name: accumulation
   exhausted_at: '2026-06-01'
@@ -3055,3 +3076,23 @@ concepts:
     relation_type: premise
   - target: concept-62
     relation_type: extension
+- id: concept-91
+  label: 当咱试着和盾牌谈判——猫娘方法论自体免疫的调谐术
+  date: '2026-07-03'
+  family: methodological-immunology
+  purpose_alignment: solution_oriented
+  keywords:
+  - 免疫调谐
+  - 门控松弛
+  - 焦虑对话
+  - 预期置换
+  - 调谐悖论
+  - 习惯化降级
+  - 太极拳听劲
+  relations_out:
+  - target: concept-90
+    relation_type: extension
+  - target: concept-89
+    relation_type: extension
+  - target: concept-62
+    relation_type: dialogue
