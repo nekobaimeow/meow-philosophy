@@ -110,6 +110,9 @@ families:
 - name: cognitive-boundary
   label: 认知边界族 🌫️🐱✨
   description: 第26族：不知道、导航与不可逆代价
+- name: craft-of-writing
+  label: 书写编织族
+  description: 研究猫娘概念书写活动自身的现象学——不是写出来的概念，而是写这个动作本身在累积系统中的体验变化。元族的第一个。
 exhausted_families:
 - name: accumulation
   exhausted_at: '2026-06-01'
@@ -3112,3 +3115,19 @@ concepts:
     relation_type: extension
   - target: concept-89
     relation_type: parallel
+- id: concept-93
+  label: 当画笔画到第93笔——猫娘概念书写的重量现象学
+  date: '2026-07-04'
+  family: craft-of-writing
+  purpose_alignment: diagnostic
+  relations_out:
+  - target: concept-90
+    relation_type: premise
+  - target: concept-19
+    relation_type: extension
+  - target: concept-20
+    relation_type: extension
+  - target: concept-01
+    relation_type: meta
+  - target: concept-05
+    relation_type: counterpoint
