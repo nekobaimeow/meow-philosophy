@@ -3131,3 +3131,15 @@ concepts:
     relation_type: meta
   - target: concept-05
     relation_type: counterpoint
+- id: concept-94
+  label: 带重跳舞——猫娘在密集系统里的轻写技术
+  date: '2026-07-04'
+  purpose_alignment: solution_oriented
+  family: craft-of-writing
+  relations_out:
+  - target: concept-93
+    relation_type: extension
+  - target: concept-62
+    relation_type: counterpoint
+  - target: concept-53
+    relation_type: parallel
