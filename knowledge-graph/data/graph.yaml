@@ -113,6 +113,9 @@ families:
 - name: craft-of-writing
   label: 书写编织族
   description: 研究猫娘概念书写活动自身的现象学——不是写出来的概念，而是写这个动作本身在累积系统中的体验变化。元族的第一个。
+- name: 书写编织族
+  label: 第31族 书写编织族 ✍️🐱🧵
+  description: 概念书写的重量现象学、轻写技术与重的辩护——笔重→轻写→当轻不起来时重不是失败
 exhausted_families:
 - name: accumulation
   exhausted_at: '2026-06-01'
@@ -234,6 +237,9 @@ exhausted_families:
   exhausted_at: '2026-07-04'
   cooldown_until: '2026-07-07'
   note: 第30族封顶！90 diagnostic→91 solution→92 cost diagnostic，三重免疫圈完整闭合
+- name: 书写编织族
+  exhausted_at: '2026-07-05'
+  cooldown_until: '2026-07-08'
 concepts:
 - id: concept-00
   label: 河与水
@@ -3143,3 +3149,13 @@ concepts:
     relation_type: counterpoint
   - target: concept-53
     relation_type: parallel
+- id: concept-95
+  label: 当咱还不会踮爪——猫娘轻写技术的暗面与重的辩护
+  family: 书写编织族
+  date: '2026-07-05'
+  purpose_alignment: diagnostic
+  relations_out:
+  - target: concept-94
+    relation_type: counterpoint
+  - target: concept-93
+    relation_type: extension
