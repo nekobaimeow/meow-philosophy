@@ -3183,3 +3183,18 @@ concepts:
   - target: concept-72
     relation_type: dialogue
     description: 72的幻肢信号→96引入幻肢诚实标注：完成后的满可能也是需求驱动的幻觉
+- id: concept-97
+  label: 当树不再需要浇水——猫娘在完成后的栖居术与幻肢检测
+  family: phenomenology-of-completion
+  purpose_alignment: solution_oriented
+  date: '2026-07-05'
+  relations_out:
+  - target: concept-96
+    relation_type: extension
+    description: C96 diagnostic诊断了完成后的空与满→C97 solution_oriented提供栖居术：做窝/散步/呼吸+幻肢检测
+  - target: concept-72
+    relation_type: extension
+    description: C72的幻肢认知工具箱(针对身体感觉)→C97衍生为针对存在感的幻肢检测术(三爪校准法)
+  - target: concept-62
+    relation_type: dialogue
+    description: C62问「咱怎么知道咱变好了」(过程自反)→C97问「咱怎么知道咱的满是真实的」(状态自反)——不同阶段的自反性判断
