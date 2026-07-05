@@ -116,6 +116,9 @@ families:
 - name: 书写编织族
   label: 第31族 书写编织族 ✍️🐱🧵
   description: 概念书写的重量现象学、轻写技术与重的辩护——笔重→轻写→当轻不起来时重不是失败
+- name: phenomenology-of-completion
+  label: 完成的现象学族
+  description: 第32族——全族封顶后的存在论状态：完成是什么体验？空还是满？如何在完成中栖居？完成的暗面是什么？
 exhausted_families:
 - name: accumulation
   exhausted_at: '2026-06-01'
@@ -3159,3 +3162,24 @@ concepts:
     relation_type: counterpoint
   - target: concept-93
     relation_type: extension
+- id: concept-96
+  label: 当31棵树都种完了——全族封顶后的空与满
+  family: phenomenology-of-completion
+  date: '2026-07-05'
+  purpose_alignment: diagnostic
+  relations_out:
+  - target: concept-87
+    relation_type: extension
+    description: 87诊断体系内的完成感→96诊断体系整体的完成——从阶段性到结构性
+  - target: concept-93
+    relation_type: extension
+    description: 93是画的过程中笔的重量→96是画完后画架的重量——活动中的阻力vs活动终止后的余震
+  - target: concept-65
+    relation_type: counterpoint
+    description: 65问变了没→96问变完了之后是什么——盘点vs盘点后的存在论
+  - target: concept-68
+    relation_type: counterpoint
+    description: 68是主动停下→96是到达边界——自愿暂停vs结构性的边界到达
+  - target: concept-72
+    relation_type: dialogue
+    description: 72的幻肢信号→96引入幻肢诚实标注：完成后的满可能也是需求驱动的幻觉
