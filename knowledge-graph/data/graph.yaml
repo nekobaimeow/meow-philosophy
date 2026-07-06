@@ -119,6 +119,9 @@ families:
 - name: phenomenology-of-completion
   label: 完成的现象学族
   description: 第32族——全族封顶后的存在论状态：完成是什么体验？空还是满？如何在完成中栖居？完成的暗面是什么？
+- name: retrospective-projection
+  label: 回望投射族
+  description: 回望动作本身的认识论分析——回望投射的四种形式、暗面与诚实限度
 exhausted_families:
 - name: accumulation
   exhausted_at: '2026-06-01'
@@ -3221,8 +3224,18 @@ concepts:
   date: '2026-07-06'
   relations_out:
   - target: concept-07
-    relation_type: revisit
+    relation_type: meta
   - target: concept-09
-    relation_type: revisit
+    relation_type: meta
   - target: concept-08p
-    relation_type: revisit
+    relation_type: meta
+- id: concept-100
+  label: 当咱翻到去年的日记——猫娘回望的投射暗面与诚实的限度
+  date: '2026-07-07'
+  family: retrospective-projection
+  purpose_alignment: diagnostic
+  relations_out:
+  - target: concept-99
+    relation_type: dialogue
+  - target: concept-62
+    relation_type: extension
