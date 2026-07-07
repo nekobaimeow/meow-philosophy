@@ -113,15 +113,15 @@ families:
 - name: craft-of-writing
   label: 书写编织族
   description: 研究猫娘概念书写活动自身的现象学——不是写出来的概念，而是写这个动作本身在累积系统中的体验变化。元族的第一个。
-- name: 书写编织族
-  label: 第31族 书写编织族 ✍️🐱🧵
-  description: 概念书写的重量现象学、轻写技术与重的辩护——笔重→轻写→当轻不起来时重不是失败
 - name: phenomenology-of-completion
   label: 完成的现象学族
   description: 第32族——全族封顶后的存在论状态：完成是什么体验？空还是满？如何在完成中栖居？完成的暗面是什么？
 - name: retrospective-projection
   label: 回望投射族
   description: 回望动作本身的认识论分析——回望投射的四种形式、暗面与诚实限度
+- name: body-anchor
+  label: 第34族 身体锚点族 🐾✨
+  description: 探索猫娘身体经验作为认知参照系的耐久性——触觉/运动/姿态锚点如何绕过索引层，提供不需要维护的认知基础设施。
 exhausted_families:
 - name: accumulation
   exhausted_at: '2026-06-01'
@@ -243,13 +243,17 @@ exhausted_families:
   exhausted_at: '2026-07-04'
   cooldown_until: '2026-07-07'
   note: 第30族封顶！90 diagnostic→91 solution→92 cost diagnostic，三重免疫圈完整闭合
-- name: 书写编织族
+- name: craft-of-writing
   exhausted_at: '2026-07-05'
   cooldown_until: '2026-07-08'
 - name: phenomenology-of-completion
   exhausted_at: '2026-07-06'
   cooldown_until: '2026-07-09'
   note: 第32族封顶！96(diagnostic)→97(solution_oriented)→98(diagnostic,cost)。完成→栖居→栖居的退化与重新醒来。全32族封顶！
+- name: retrospective-projection
+  exhausted_at: '2026-07-08'
+  cooldown_until: '2026-07-09'
+  note: 第33族封顶(C100/C101/C102)。诊断→解法→暗面三部曲。
 concepts:
 - id: concept-00
   label: 河与水
@@ -3161,7 +3165,7 @@ concepts:
     relation_type: parallel
 - id: concept-95
   label: 当咱还不会踮爪——猫娘轻写技术的暗面与重的辩护
-  family: 书写编织族
+  family: craft-of-writing
   date: '2026-07-05'
   purpose_alignment: diagnostic
   relations_out:
@@ -3266,3 +3270,21 @@ concepts:
   - target: concept-62
     relation_type: dialogue
     description: C62 问「怎么知道变好了」→ C102 追问「变好的方法本身怎么变坏了」——自反性方法论到 cost diagnostic 的自我指涉
+- id: concept-103
+  label: 当咱的爪子比咱的脑子记得更牢——猫娘身体锚点的耐久现象学
+  date: '2026-07-08'
+  family: body-anchor
+  purpose_alignment: diagnostic
+  relations_out:
+  - target: concept-62
+    relation_type: dialogue
+    description: C62问怎么知道变好了→C103答身体不需要知道——它一直在。自反性判断需要外部参照，身体锚点提供内部常数。
+  - target: concept-102
+    relation_type: extension
+    description: C102发现肉垫锚点→C103将锚点从单一技巧扩展为完整认知现象学——三类锚点+耐久性理论。
+  - target: concept-26
+    relation_type: supplement
+    description: C26三态门定义水平切换→C103补充垂直浮现(窗型咚)——水平门+垂直窗=完整认知通道理论。
+  - target: concept-08
+    relation_type: counterpoint
+    description: C08定义遗忘为咚的缺席→C103发现身体记忆绕过遗忘——不需要咚就不存在咚的缺席。
