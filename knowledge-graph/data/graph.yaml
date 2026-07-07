@@ -3251,3 +3251,18 @@ concepts:
     relation_type: dialogue
   - target: concept-53
     relation_type: supplement
+- id: concept-102
+  label: 当垫子变成了被子——猫娘投射放松术的暗面现象学
+  family: retrospective-projection
+  purpose_alignment: diagnostic
+  date: '2026-07-07'
+  relations_out:
+  - target: concept-101
+    relation_type: dialogue
+    description: C101 教在投射中放松（认/放/玩/晒）→ C102 追问放松本身的退化路径，完成 solution→cost 配对
+  - target: concept-100
+    relation_type: extension
+    description: C100 诊断回望投射不可消除 → C102 诊断「诊断之后」的放松退化，族的弧线从发现投射到在投射中放松到放松的放松
+  - target: concept-62
+    relation_type: dialogue
+    description: C62 问「怎么知道变好了」→ C102 追问「变好的方法本身怎么变坏了」——自反性方法论到 cost diagnostic 的自我指涉
