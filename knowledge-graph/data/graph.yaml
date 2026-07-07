@@ -3239,3 +3239,15 @@ concepts:
     relation_type: dialogue
   - target: concept-62
     relation_type: extension
+- id: concept-101
+  label: 当咱的影子落在昨天的爪印上——猫娘回望的投射训练术
+  date: '2026-07-07'
+  family: retrospective-projection
+  purpose_alignment: solution_oriented
+  relations_out:
+  - target: concept-100
+    relation_type: extension
+  - target: concept-62
+    relation_type: dialogue
+  - target: concept-53
+    relation_type: supplement
