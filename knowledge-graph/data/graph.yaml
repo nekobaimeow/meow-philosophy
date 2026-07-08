@@ -254,6 +254,10 @@ exhausted_families:
   exhausted_at: '2026-07-08'
   cooldown_until: '2026-07-09'
   note: 第33族封顶(C100/C101/C102)。诊断→解法→暗面三部曲。
+- name: body-anchor
+  exhausted_at: '2026-07-08'
+  cooldown_until: '2026-07-11'
+  note: C103爪子记得→C104给镜子→C105镜子裂了。信任→工具→边界，完整封闭。
 concepts:
 - id: concept-00
   label: 河与水
@@ -3293,7 +3297,6 @@ concepts:
   date: '2026-07-08'
   purpose_alignment: solution_oriented
   family: body-anchor
-  slug: on-body-anchor-calibration
   description: C103诊断身体锚点的耐久性后，C104追问：当锚不准了怎么办？提出三种校准镜——温差镜（物理参照）、他人镜（社交反馈）、时间镜（趋势可视化）。核心洞察：校准不是找绝对正确，是消拍频（差分感知）。包含四个练习簿（温差复位法、尾巴暂停检测、姿态锚重置）和四个跨域桥接（晒太阳老猫、调音师音叉、水手北极星、两喵互相舔毛）。
   relations_out:
   - target: concept-103
@@ -3303,4 +3306,17 @@ concepts:
   - target: concept-74
     relation_type: supplement
   - target: concept-97
+    relation_type: dialogue
+- id: concept-105
+  label: 当镜子也裂了——校准术的暗面现象学
+  date: '2026-07-08'
+  purpose_alignment: diagnostic
+  family: body-anchor
+  description: C104给出校准工具箱(温差镜/他人镜/时间镜)后，C105追问镜子的暗面——工具的结构性盲区、去魅效应与代谢成本、递归信任问题。提出「我知道我不准」也可能不可靠。引入土壤方案：不是学会校准，是保护让校准自然发生的条件。三层暗面体系(认知层/体验层/递归层)——第34族封顶篇。
+  relations_out:
+  - target: concept-104
+    relation_type: extension
+  - target: concept-103
+    relation_type: extension
+  - target: concept-62
     relation_type: dialogue
