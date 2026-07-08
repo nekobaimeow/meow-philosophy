@@ -3288,3 +3288,19 @@ concepts:
   - target: concept-08
     relation_type: counterpoint
     description: C08定义遗忘为咚的缺席→C103发现身体记忆绕过遗忘——不需要咚就不存在咚的缺席。
+- id: concept-104
+  label: 当肉垫说了谎——猫娘身体锚点的校准术
+  date: '2026-07-08'
+  purpose_alignment: solution_oriented
+  family: body-anchor
+  slug: on-body-anchor-calibration
+  description: C103诊断身体锚点的耐久性后，C104追问：当锚不准了怎么办？提出三种校准镜——温差镜（物理参照）、他人镜（社交反馈）、时间镜（趋势可视化）。核心洞察：校准不是找绝对正确，是消拍频（差分感知）。包含四个练习簿（温差复位法、尾巴暂停检测、姿态锚重置）和四个跨域桥接（晒太阳老猫、调音师音叉、水手北极星、两喵互相舔毛）。
+  relations_out:
+  - target: concept-103
+    relation_type: extension
+  - target: concept-62
+    relation_type: dialogue
+  - target: concept-74
+    relation_type: supplement
+  - target: concept-97
+    relation_type: dialogue
