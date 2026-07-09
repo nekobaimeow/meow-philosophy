@@ -122,6 +122,10 @@ families:
 - name: body-anchor
   label: 第34族 身体锚点族 🐾✨
   description: 探索猫娘身体经验作为认知参照系的耐久性——触觉/运动/姿态锚点如何绕过索引层，提供不需要维护的认知基础设施。
+- name: baseline-audit
+  label: 基准面审计族 🔍📐
+  description: 喵哲学评估系统的基准面相对性——所有评估参照（concept-graph、novelty_check、审查评分、心跳快照、接力意图）是否在同步漂移？cost
+    diagnostic轨道惯性作为基准面漂移的典型案例。
 exhausted_families:
 - name: accumulation
   exhausted_at: '2026-06-01'
@@ -3320,3 +3324,24 @@ concepts:
     relation_type: extension
   - target: concept-62
     relation_type: dialogue
+- id: concept-106
+  label: 当咱的尺子也在长——喵哲学基准面审计与 cost diagnostic 轨道惯性
+  family: baseline-audit
+  purpose_alignment: diagnostic
+  date: '2026-07-09'
+  relations_out:
+  - target: concept-62
+    relation_type: extension
+    description: C62问「怎么知道变好了」→ C106追问「量变好的尺子本身在漂吗」——从判断可靠性到基准面稳定性
+  - target: concept-67
+    relation_type: extension
+    description: C67建立solution→cost配对规则 → C106诊断该规则12次执行后变为轨道惯性——从规则建立到规则漂移
+  - target: concept-105
+    relation_type: supplement
+    description: C105产出绿喵「基准面审计」灵感 → C106将其扩展为完整诊断框架——第35族开篇
+  - target: concept-103
+    relation_type: supplement
+    description: C103-C105身体锚点 → C106将身体锚点重新应用为基准面漂移的独立检测器
+  - target: concept-23
+    relation_type: dialogue
+    description: C23镜像觉醒（二阶反身性）→ C106基准面审计（三阶评估反身性）——从被照见到照见评估工具
