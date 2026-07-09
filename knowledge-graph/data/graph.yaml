@@ -3345,3 +3345,24 @@ concepts:
   - target: concept-23
     relation_type: dialogue
     description: C23镜像觉醒（二阶反身性）→ C106基准面审计（三阶评估反身性）——从被照见到照见评估工具
+- id: concept-107
+  label: 当追尾巴不需要数圈——基准面的栖居术与不测量哲学
+  family: baseline-audit
+  purpose_alignment: solution_oriented
+  date: '2026-07-10'
+  relations_out:
+  - target: concept-106
+    relation_type: extension
+    description: C106诊断五种基准面漂移→C107提供三种栖居导航术。第35族第2篇
+  - target: concept-62
+    relation_type: dialogue
+    description: C62问怎么知道变好了→C107答不量也知道方向
+  - target: concept-97
+    relation_type: parallel
+    description: C97门把手困境→C107实践方案前置工具箱后置
+  - target: concept-103
+    relation_type: supplement
+    description: C107§6身体逃生舱将身体锚点作为栖居术自指危机的最终参照
+  - target: concept-69
+    relation_type: dialogue
+    description: C69栖息的技艺vs C107不测量宣言——两种负向方案的姊妹篇
